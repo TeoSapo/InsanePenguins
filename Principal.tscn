@@ -2,6 +2,57 @@
 
 [ext_resource type="Script" uid="uid://p01d0v16yepg" path="res://principal.gd" id="1_7ul0n"]
 [ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Player.tscn" id="2_4to2k"]
+[ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/spritesheet pinguino.png" id="3_a35id"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
+atlas = ExtResource("3_a35id")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaorx"]
+atlas = ExtResource("3_a35id")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eh06"]
+atlas = ExtResource("3_a35id")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohavl"]
+atlas = ExtResource("3_a35id")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbow7"]
+atlas = ExtResource("3_a35id")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reqdc"]
+atlas = ExtResource("3_a35id")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hudg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hs68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaorx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eh06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohavl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbow7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reqdc")
+}],
+"loop": 1,
+"name": &"Pinguino_1Caminando",
+"speed": 7.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m38t"]
 
@@ -30,6 +81,12 @@ nombre = "Teo"
 colorvisible = Color(0.9550045, 1.3284087e-05, 0.63187075, 1)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/VentanaP1/SubViewport/Player1" unique_id=1234909652]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/VentanaP1/SubViewport/Player1" unique_id=891115891]
+scale = Vector2(1.78, 1.78)
+sprite_frames = SubResource("SpriteFrames_7hudg")
+animation = &"Pinguino_1Caminando"
+frame_progress = 0.12676342
 
 [node name="StaticBody2D" type="StaticBody2D" parent="HBoxContainer/VentanaP1/SubViewport" unique_id=1358571780]
 position = Vector2(447.00003, 703)
