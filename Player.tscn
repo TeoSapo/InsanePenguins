@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bsu2on7jwpvxa"]
+
+[ext_resource type="Script" uid="uid://5556pn35mj08" path="res://Player.gd" id="1_t42c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb4fy"]
+size = Vector2(44, 95)
+
+[node name="Player1" type="CharacterBody2D" unique_id=245024439]
+script = ExtResource("1_t42c4")
+metadata/_edit_group_ = true
+
+[node name="Sprite2d" type="Sprite2D" parent="." unique_id=1650505136]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779881932]
+shape = SubResource("RectangleShape2D_hb4fy")
+debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1524383921]
+offset_left = -59.0
+offset_top = -75.0
+offset_right = 61.0
+offset_bottom = -51.0
+pivot_offset = Vector2(60, 12)
+text = "NOMBRE"
+horizontal_alignment = 1
+clip_text = true
