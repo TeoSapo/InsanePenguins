@@ -161,7 +161,7 @@ size = Vector2i(960, 1080)
 render_target_update_mode = 4
 
 [node name="Player2" parent="HBoxContainer/VentanaP2/SubViewport" unique_id=45253977 instance=ExtResource("2_4to2k")]
-position = Vector2(380, 535)
+position = Vector2(420, 535)
 nombre = "Jazmín"
 colorvisible = Color(0.18010753, 0.658579, 0.07534861, 1)
 
