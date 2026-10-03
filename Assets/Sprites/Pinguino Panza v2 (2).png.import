@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhb11x2lr24n1"
-path="res://.godot/imported/pescadito brillante v2.png-5be626eb6436662e523d0defab641085.ctex"
+uid="uid://lmlnnooq7578"
+path="res://.godot/imported/Pinguino Panza v2 (2).png-d0226052afe89325d1e5a665da0f16aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pescadito brillante v2.png"
-dest_files=["res://.godot/imported/pescadito brillante v2.png-5be626eb6436662e523d0defab641085.ctex"]
+source_file="res://Assets/Sprites/Pinguino Panza v2 (2).png"
+dest_files=["res://.godot/imported/Pinguino Panza v2 (2).png-d0226052afe89325d1e5a665da0f16aa.ctex"]
 
 [params]
 

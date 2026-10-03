@@ -1,6 +1,44 @@
 [gd_scene format=3 uid="uid://c66hto4d8j1qt"]
 
-[ext_resource type="Texture2D" uid="uid://bhb11x2lr24n1" path="res://Assets/pescadito brillante v2.png" id="1_rwwqh"]
+[ext_resource type="Texture2D" uid="uid://bhb11x2lr24n1" path="res://Assets/Sprites/pescadito brillante v2.png" id="1_rwwqh"]
+[ext_resource type="Script" uid="uid://ls4f3tgjpj28" path="res://Scripts/percadito.gd" id="1_uy5wg"]
+
+[sub_resource type="Animation" id="Animation_rwwqh"]
+resource_name = "Normal"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -10.0]
+}
+
+[sub_resource type="Animation" id="Animation_uy5wg"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-20.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivfq4"]
+_data = {
+&"Normal": SubResource("Animation_rwwqh"),
+&"RESET": SubResource("Animation_uy5wg")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uy5wg"]
 atlas = ExtResource("1_rwwqh")
@@ -80,10 +118,31 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb4fy"]
+size = Vector2(30, 12)
+
 [node name="Percadito" type="Node2D" unique_id=1845132850]
+script = ExtResource("1_uy5wg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2003799740]
+root_node = NodePath("../AnimatedSprite2D")
+libraries/ = SubResource("AnimationLibrary_ivfq4")
+autoplay = &"Normal"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=423898063]
+position = Vector2(0, -20)
+scale = Vector2(1.65625, 1.65625)
 sprite_frames = SubResource("SpriteFrames_7hudg")
 animation = &"brillo"
 autoplay = "brillo"
-frame_progress = 0.6134408
+frame_progress = 0.8011628
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=730399497]
+scale = Vector2(0.6037736, 0.6037736)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=1350857072]
+z_index = -1
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hb4fy")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_body_entered"]

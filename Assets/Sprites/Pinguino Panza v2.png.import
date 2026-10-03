@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqvlvgpn46skt"
-path="res://.godot/imported/Pinguino Panza v2.png-4ca2656929b7ac536419a2ecda8400aa.ctex"
+path="res://.godot/imported/Pinguino Panza v2.png-ceb234e1ebb55ba1f66513b115c54c26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pinguino Panza v2.png"
-dest_files=["res://.godot/imported/Pinguino Panza v2.png-4ca2656929b7ac536419a2ecda8400aa.ctex"]
+source_file="res://Assets/Sprites/Pinguino Panza v2.png"
+dest_files=["res://.godot/imported/Pinguino Panza v2.png-ceb234e1ebb55ba1f66513b115c54c26.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmbtw2pyc0cnm"
-path="res://.godot/imported/idle pinguino.png-19307ea880137b17fbefcbb936dc1f36.ctex"
+uid="uid://bhb11x2lr24n1"
+path="res://.godot/imported/pescadito brillante v2.png-c3ce6da3652290c039f799825c2f0016.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/idle pinguino.png"
-dest_files=["res://.godot/imported/idle pinguino.png-19307ea880137b17fbefcbb936dc1f36.ctex"]
+source_file="res://Assets/Sprites/pescadito brillante v2.png"
+dest_files=["res://.godot/imported/pescadito brillante v2.png-c3ce6da3652290c039f799825c2f0016.ctex"]
 
 [params]
 

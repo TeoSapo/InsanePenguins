@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://dx1sve0sn6alr"]
+
+[ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/percadito.tscn" id="1_fa6n5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m38t"]
+
+[node name="DibujoNivel" type="Node" unique_id=539671384]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1902868496]
+position = Vector2(438.00003, 901)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=513000055]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1885177606]
+position = Vector2(898, 739)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=863602691]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1555887962]
+position = Vector2(426, 536.00006)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=369506675]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=421851847]
+position = Vector2(896, 356.00006)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=852593352]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1215241542]
+position = Vector2(1359.0001, 193.00003)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=982401067]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=353575567]
+position = Vector2(1685, 732.0001)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=2056158962]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=2098331616]
+position = Vector2(793, 67.00018)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=1830399396]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=81144159]
+position = Vector2(359, -115)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=584081075]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=1824829245]
+position = Vector2(1678, 533.00024)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=1455883361]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=1215198120]
+position = Vector2(1651, -1387)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=1572478593]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1614382562]
+position = Vector2(1024.0001, -1621)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=257847616]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1286425500]
+position = Vector2(1401, 909.9999)
+scale = Vector2(72.86409, 1.7021658)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=902968191]
+scale = Vector2(0.31784505, 1)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="." unique_id=1375642473]
+position = Vector2(958, 1056)
+scale = Vector2(300, 1.702)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13" unique_id=276860698]
+scale = Vector2(0.31784505, 0.99999994)
+shape = SubResource("RectangleShape2D_0m38t")
+debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+
+[node name="Percadito" parent="." unique_id=1845132850 instance=ExtResource("1_fa6n5")]
+position = Vector2(780, 703)
+
+[node name="Percadito2" parent="." unique_id=1915203730 instance=ExtResource("1_fa6n5")]
+position = Vector2(395, 503)
+
+[node name="Percadito3" parent="." unique_id=1220691032 instance=ExtResource("1_fa6n5")]
+position = Vector2(751, 1017)
+
+[node name="Percadito4" parent="." unique_id=1452934302 instance=ExtResource("1_fa6n5")]
+position = Vector2(1071, 1014)

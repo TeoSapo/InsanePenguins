@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lmlnnooq7578"
-path="res://.godot/imported/Pinguino Panza v2 (2).png-0b14f53981fa9dd95e0cd86ae53401ab.ctex"
+uid="uid://d4d8br1t6euxv"
+path="res://.godot/imported/spritesheet pinguino.png-eec642bf0f82e319bda15fa0a75f9f17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Pinguino Panza v2 (2).png"
-dest_files=["res://.godot/imported/Pinguino Panza v2 (2).png-0b14f53981fa9dd95e0cd86ae53401ab.ctex"]
+source_file="res://Assets/Sprites/spritesheet pinguino.png"
+dest_files=["res://.godot/imported/spritesheet pinguino.png-eec642bf0f82e319bda15fa0a75f9f17.ctex"]
 
 [params]
 
