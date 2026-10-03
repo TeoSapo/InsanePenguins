@@ -57,6 +57,10 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("3_kne1u")
 region = Rect2(32, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp6x6"]
+atlas = ExtResource("3_e80uo")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kne1u"]
 animations = [{
 "frames": [{
@@ -80,7 +84,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Caminando",
-"speed": 7.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,7 +95,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -108,6 +112,14 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Panzaso",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp6x6")
+}],
+"loop": 1,
+"name": &"Saltando",
 "speed": 5.0
 }]
 
@@ -123,9 +135,8 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 texture_filter = 1
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Idle"
-autoplay = "Caminando"
-frame_progress = 0.9728759
+animation = &"Caminando"
+autoplay = "Idle"
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0

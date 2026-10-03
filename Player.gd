@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 800.0
+const SPEED = 100
 const JUMP_SPEED = 800.0
 @export var nombre:String 
 @export var colorvisible:Color
@@ -11,29 +11,35 @@ func _ready() -> void:
 	$Label.text = nombre
 
 func _physics_process(delta: float) -> void:
-
-	var direction:float = 0.0
 	
+	mover_y_animar(delta,self)
+	move_and_slide()
+	
+func mover_y_animar(delta,jugador: CharacterBody2D):
+	var direction:float = 0.0
+	var playerTecla:String
+	
+	match jugador.name:
+		"Player1":
+			playerTecla = "p1"
+		"Player2": 
+			playerTecla = "p2"
+		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	if name == "Player1" and Input.is_action_just_pressed("p1UP") and is_on_floor():
-		velocity.y = -JUMP_SPEED
-		
-	if name == "Player2" and Input.is_action_just_pressed("p2UP") and is_on_floor():
-		velocity.y = -JUMP_SPEED
 
-	
-	if name == "Player1":
-		direction = Input.get_axis("p1LEFT","p1RIGHT")
-	else:
-		direction = Input.get_axis("p2LEFT","p2RIGHT")
-	
+	if  Input.is_action_just_pressed(playerTecla+"UP") and is_on_floor():
+		velocity.y = -JUMP_SPEED
+		sprite.play("Saltando")
+
+	direction = Input.get_axis(playerTecla+"LEFT",playerTecla+"RIGHT")
+
 	if direction:
 		velocity.x = direction * SPEED
+		if is_on_floor():
+			sprite.play("Caminando")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		sprite.play("Idle")
 
-	move_and_slide()
-
-	
+	sprite.flip_h = direction < 0
