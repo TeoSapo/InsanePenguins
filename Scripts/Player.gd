@@ -29,8 +29,10 @@ func mover_y_animar(delta,jugador: CharacterBody2D):
 		velocity += get_gravity() * delta
 
 	if  Input.is_action_just_pressed(playerTecla+"UP") and is_on_floor():
-		velocity.y = -JUMP_SPEED
 		sprite.play("Saltando")
+		velocity.y = -JUMP_SPEED
+		
+		
 
 	direction = Input.get_axis(playerTecla+"LEFT",playerTecla+"RIGHT")
 

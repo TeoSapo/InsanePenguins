@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://5556pn35mj08" path="res://Scripts/Player.gd" id="1_t42c4"]
 [ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/Sprites/spritesheet pinguino.png" id="2_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://bmbtw2pyc0cnm" path="res://Assets/Sprites/idle pinguino.png" id="3_e80uo"]
+[ext_resource type="Texture2D" uid="uid://bl76hhgwkm3rh" path="res://Assets/Sprites/Idle Pinguino v2.png" id="3_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
+[ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb4fy"]
 radius = 15.5
@@ -33,12 +34,12 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("2_kpjcp")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ncpa"]
-atlas = ExtResource("3_e80uo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2dk4"]
+atlas = ExtResource("3_5hhfp")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wi0c6"]
-atlas = ExtResource("3_e80uo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
+atlas = ExtResource("3_5hhfp")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
@@ -57,9 +58,17 @@ region = Rect2(0, 32, 32, 32)
 atlas = ExtResource("3_kne1u")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hp6x6"]
-atlas = ExtResource("3_e80uo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mok4h"]
+atlas = ExtResource("5_kwdw2")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t27sq"]
+atlas = ExtResource("5_kwdw2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tm5s"]
+atlas = ExtResource("5_kwdw2")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kne1u"]
 animations = [{
@@ -88,14 +97,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5ncpa")
+"texture": SubResource("AtlasTexture_j2dk4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wi0c6")
+"texture": SubResource("AtlasTexture_urfe6")
 }],
 "loop": 1,
 "name": &"Idle",
-"speed": 6.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -116,7 +125,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hp6x6")
+"texture": SubResource("AtlasTexture_mok4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t27sq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tm5s")
 }],
 "loop": 1,
 "name": &"Saltando",
@@ -124,6 +139,7 @@ animations = [{
 }]
 
 [node name="Player1" type="CharacterBody2D" unique_id=245024439]
+collision_mask = 3
 script = ExtResource("1_t42c4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779881932]
@@ -135,8 +151,9 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 texture_filter = 1
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Caminando"
+animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.11404128
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0

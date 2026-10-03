@@ -1,8 +1,44 @@
-[gd_scene format=3 uid="uid://dx1sve0sn6alr"]
+[gd_scene format=4 uid="uid://dx1sve0sn6alr"]
 
 [ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/percadito.tscn" id="1_fa6n5"]
+[ext_resource type="Texture2D" uid="uid://dhrsqru12nku6" path="res://Assets/Imagenes/Plataformas.png" id="2_gi025"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m38t"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul8xm"]
+texture = ExtResource("2_gi025")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6216927, -16, 16, -16, 16, 1.0795212, -1.0795212, 0.4626541)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 1.0795212, -16, 1.696392)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -0.4626503, -16, -0.77108383, 1.3879547, -16, 1.696392)
+2:0/0/terrains_peering_bit/left_side = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSet" id="TileSet_7hudg"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Plataformas Hielo 0"
+terrain_set_0/terrain_0/color = Color(0.73009825, 0, 0.11938869, 1)
+sources/0 = SubResource("TileSetAtlasSource_ul8xm")
 
 [node name="DibujoNivel" type="Node" unique_id=539671384]
 
@@ -147,3 +183,9 @@ position = Vector2(751, 1017)
 
 [node name="Percadito4" parent="." unique_id=1452934302 instance=ExtResource("1_fa6n5")]
 position = Vector2(1071, 1014)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1234662462]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAA7ABAAAAACAAAAAAA6ABAAAAAAAAAAAAAJAA0AAAACAAAAAAAIAA0AAAABAAAAAAAHAA0AAAABAAAAAAAGAA0AAAABAAAAAAAFAA0AAAABAAAAAAAEAA0AAAAAAAAAAAARAA0AAAACAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAANAA0AAAABAAAAAAAMAA0AAAAAAAAAAAAUAAsAAAACAAAAAAATAAsAAAABAAAAAAASAAsAAAABAAAAAAARAAsAAAABAAAAAAAQAAsAAAABAAAAAAAPAAsAAAAAAAAAAAAIAAsAAAACAAAAAAAHAAsAAAABAAAAAAAGAAsAAAABAAAAAAAFAAsAAAABAAAAAAAEAAsAAAABAAAAAAADAAsAAAAAAAAAAAANAAkAAAACAAAAAAAMAAkAAAABAAAAAAALAAkAAAABAAAAAAAKAAkAAAABAAAAAAAJAAkAAAABAAAAAAAIAAkAAAAAAAAAAAACAAcAAAAAAAAAAAAHAAcAAAACAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAAPAAUAAAAAAAAAAAASAAUAAAACAAAAAAARAAUAAAABAAAAAAAQAAUAAAABAAAAAAAWAAUAAAAAAAAAAAAaAAUAAAACAAAAAAAZAAUAAAABAAAAAAAYAAUAAAABAAAAAAAXAAUAAAABAAAAAAAMAAIAAAACAAAAAAALAAIAAAABAAAAAAAKAAIAAAABAAAAAAAJAAIAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAAAAAAAAAAEAAMAAAACAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAAAAAAAAAAOAP//AAACAAAAAAANAP//AAABAAAAAAAMAP//AAABAAAAAAALAP//AAABAAAAAAAKAP//AAABAAAAAAAJAP//AAAAAAAAAAAZAA0AAAACAAAAAAAYAA0AAAABAAAAAAAXAA0AAAABAAAAAAAWAA0AAAABAAAAAAAVAA0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7hudg")
