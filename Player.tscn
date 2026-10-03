@@ -1,19 +1,77 @@
 [gd_scene format=3 uid="uid://bsu2on7jwpvxa"]
 
 [ext_resource type="Script" uid="uid://5556pn35mj08" path="res://Player.gd" id="1_t42c4"]
+[ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/spritesheet pinguino.png" id="2_kpjcp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb4fy"]
-size = Vector2(44, 95)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb4fy"]
+radius = 15.5
+height = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaorx"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eh06"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohavl"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbow7"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reqdc"]
+atlas = ExtResource("2_kpjcp")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kne1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hs68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaorx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eh06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohavl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbow7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reqdc")
+}],
+"loop": 1,
+"name": &"Caminando",
+"speed": 7.0
+}]
 
 [node name="Player1" type="CharacterBody2D" unique_id=245024439]
 script = ExtResource("1_t42c4")
 metadata/_edit_group_ = true
 
-[node name="Sprite2d" type="Sprite2D" parent="." unique_id=1650505136]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779881932]
-shape = SubResource("RectangleShape2D_hb4fy")
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_hb4fy")
 debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130779477]
+texture_filter = 1
+scale = Vector2(1.78, 1.78)
+sprite_frames = SubResource("SpriteFrames_kne1u")
+animation = &"Caminando"
+autoplay = "Caminando"
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -59.0
