@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c66hto4d8j1qt"]
+
+[ext_resource type="Texture2D" uid="uid://bhb11x2lr24n1" path="res://Assets/pescadito brillante v2.png" id="1_rwwqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy5wg"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivfq4"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y1c5"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iv3l"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sc00"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw6px"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6x66"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80qjm"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgb7a"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8laqo"]
+atlas = ExtResource("1_rwwqh")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hudg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy5wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivfq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y1c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iv3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sc00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw6px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6x66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80qjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgb7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8laqo")
+}],
+"loop": 1,
+"name": &"brillo",
+"speed": 8.0
+}]
+
+[node name="Percadito" type="Node2D" unique_id=1845132850]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=423898063]
+sprite_frames = SubResource("SpriteFrames_7hudg")
+animation = &"brillo"
+autoplay = "brillo"
+frame_progress = 0.6134408
