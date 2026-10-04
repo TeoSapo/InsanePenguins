@@ -6,6 +6,8 @@ extends Node2D
 
 func _ready():
 
+	InsanePenguins.Actualizar_Score.connect(actualizar_puntos)
+	
 	# duplica el mundo en el subviewport del player 2
 	var Nivel = $HBoxContainer/VentanaP1/SubViewport.find_world_2d()
 	$HBoxContainer/VentanaP2/SubViewport.world_2d = Nivel
@@ -13,7 +15,7 @@ func _ready():
 	InsanePenguins.P1Score = 0
 	InsanePenguins.P2Score = 0
 	actualizar_puntos()
-	InsanePenguins.Actualizar_Score.connect(actualizar_puntos)
+	
 	
 	
 func actualizar_puntos():
