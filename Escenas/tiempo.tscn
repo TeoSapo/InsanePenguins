@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://becljr1j33h6g"]
+
+[sub_resource type="Gradient" id="Gradient_i0tng"]
+offsets = PackedFloat32Array(0, 0.33766234, 0.6753247, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.43562716, 2.3702321e-05, 0.0005270938, 1, 0.14935112, 3.5725236e-05, 0.00079446024, 1, 5.605658e-07, 4.1997606e-05, 0.00093394564, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i0tng"]
+gradient = SubResource("Gradient_i0tng")
+
+[sub_resource type="Gradient" id="Gradient_nl0sm"]
+interpolation_mode = 2
+colors = PackedColorArray(0.16078432, 0.12941177, 0.7058824, 1, 0.5497061, 0.7318979, 0.84761715, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xs5ry"]
+gradient = SubResource("Gradient_nl0sm")
+
+[node name="TiempoJuego" type="Control" unique_id=329250897]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Tiempo" type="TextureProgressBar" parent="." unique_id=259365716]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 1.0
+size_flags_horizontal = 0
+step = 0.01
+value = 100.0
+texture_under = SubResource("GradientTexture1D_i0tng")
+texture_progress = SubResource("GradientTexture1D_xs5ry")

@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://p01d0v16yepg" path="res://Scripts/Nivel1.gd" id="1_5v3ay"]
 [ext_resource type="Texture2D" uid="uid://b607kb361my65" path="res://Assets/Imagenes/Fondo.jpg" id="2_nl0sm"]
+[ext_resource type="PackedScene" uid="uid://becljr1j33h6g" path="res://Escenas/tiempo.tscn" id="2_xs5ry"]
 [ext_resource type="PackedScene" uid="uid://dx1sve0sn6alr" path="res://Escenas/dibujo_nivel.tscn" id="3_xs5ry"]
 [ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Escenas/Player.tscn" id="4_oc4j7"]
 
 [node name="Nivel1" type="Node2D" unique_id=1405768944]
 script = ExtResource("1_5v3ay")
+
+[node name="TimerNivel" type="Timer" parent="." unique_id=3452506]
+autostart = true
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1890496254]
 offset_left = 2.0
@@ -71,3 +75,12 @@ nombre = "JAZ"
 colorvisible = Color(0.18010753, 0.658579, 0.07534861, 1)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/VentanaP2/SubViewport/Player2" unique_id=287443466]
+
+[node name="TiempoJuego" parent="." unique_id=329250897 instance=ExtResource("2_xs5ry")]
+offset_left = 37.000004
+offset_top = 489.0
+offset_right = 37.000004
+offset_bottom = 489.0
+scale = Vector2(3.480001, 26.36)
+
+[connection signal="timeout" from="TimerNivel" to="." method="_on_timer_nivel_timeout"]
