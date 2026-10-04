@@ -3,20 +3,23 @@ extends CharacterBody2D
 const SPEED = 100
 const JUMP_SPEED = 800.0
 const SLIP_SPEED = 500
-
+@onready var ESTADOS = ["IDLE","CAMINANDO","SALTANDO","PANZASO"]
+@onready var estado 
 @export var nombre:String 
 @export var colorvisible:Color
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	estado = ESTADOS[0]
 	$Label.text = nombre
 
 func _physics_process(delta: float) -> void:
 	
-	mover_y_animar(delta,self)
+	mover(delta,self)
+	animar(self)
 	move_and_slide()
 	
-func mover_y_animar(delta,jugador: CharacterBody2D):
+func mover(delta,jugador: CharacterBody2D):
 	var direction:float = 0.0
 	var playerTecla:String
 	
@@ -34,25 +37,38 @@ func mover_y_animar(delta,jugador: CharacterBody2D):
 		
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		sprite.play("Saltando")
-	else:
-		if direction:
-			velocity.x = direction * SPEED
-			sprite.play("Caminando")
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			sprite.play("Idle")
-			
-		if Input.is_action_pressed(playerTecla+"DOWN"):
-			$Collision.disabled = true
-			$Collision2.disabled = false
-			velocity.x = direction *  SLIP_SPEED
-			sprite.play("Panzaso")
-			
+		estado = "SALTANDO"
 		
+	if direction:
+		velocity.x = direction * SPEED
+		if is_on_floor():
+			estado = "CAMINANDO"
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_on_floor():
+			estado ="IDLE"
+
+	if Input.is_action_pressed(playerTecla+"DOWN"):
+		$Collision.disabled = true
+		$Collision2.disabled = false
+		if velocity.x != 0:
+			velocity.x = direction *  SLIP_SPEED
+			estado = "PANZASO"
 	
 	if  Input.is_action_just_pressed(playerTecla+"UP") and is_on_floor():
 		velocity.y = -JUMP_SPEED
-
-
+		estado = "SALTANDO"
+		
 	sprite.flip_h = direction < 0
+
+
+func animar(jugador:CharacterBody2D):
+	match estado:
+		"IDLE":
+			sprite.play("Idle")
+		"SALTANDO":
+			sprite.play("Saltando")
+		"CAMINANDO":
+			sprite.play("Caminando")	
+		"PANZASO":
+			sprite.play("Panzaso")
