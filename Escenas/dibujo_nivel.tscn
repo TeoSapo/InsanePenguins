@@ -1,9 +1,7 @@
 [gd_scene format=4 uid="uid://dx1sve0sn6alr"]
 
-[ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/percadito.tscn" id="1_fa6n5"]
+[ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/Pescadito.tscn" id="1_fa6n5"]
 [ext_resource type="Texture2D" uid="uid://dhrsqru12nku6" path="res://Assets/Imagenes/Plataformas.png" id="2_gi025"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0m38t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul8xm"]
 texture = ExtResource("2_gi025")
@@ -11,14 +9,14 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6216927, -16, 16, -16, 16, 1.0795212, -1.0795212, 0.4626541)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6216927, -16, 16, -16, 16, 1.6244087, 0.30457687, 1.725934, -1.8274593, -0.5076275)
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/top_side = 0
 0:0/0/terrains_peering_bit/top_right_corner = 0
 1:0/0 = 0
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 1.0795212, -16, 1.696392)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 1.5931549, -16, 1.696392)
 1:0/0/terrains_peering_bit/right_side = 0
 1:0/0/terrains_peering_bit/left_side = 0
 1:0/0/terrains_peering_bit/top_left_corner = 0
@@ -27,7 +25,7 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -0.4626503, -16, -0.77108383, 1.3879547, -16, 1.696392)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -0.89186096, -16, 0.5945759, -13.377923, 0.4459324, -8.769972, -1.4864349, -6.391674, -1.3377914, 1.7837219, -16, 1.9323654)
 2:0/0/terrains_peering_bit/left_side = 0
 2:0/0/terrains_peering_bit/top_left_corner = 0
 2:0/0/terrains_peering_bit/top_side = 0
@@ -42,150 +40,70 @@ sources/0 = SubResource("TileSetAtlasSource_ul8xm")
 
 [node name="DibujoNivel" type="Node" unique_id=539671384]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1902868496]
-position = Vector2(438.00003, 901)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
+[node name="Pescaditos" type="Node" parent="." unique_id=1904559500]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=513000055]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+[node name="Percadito1" parent="Pescaditos" unique_id=1845132850 instance=ExtResource("1_fa6n5")]
+position = Vector2(825, 688)
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1885177606]
-position = Vector2(898, 739)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
+[node name="Percadito2" parent="Pescaditos" unique_id=1915203730 instance=ExtResource("1_fa6n5")]
+position = Vector2(376, 531)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=863602691]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
+[node name="Percadito3" parent="Pescaditos" unique_id=1220691032 instance=ExtResource("1_fa6n5")]
+position = Vector2(730, 1021)
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1555887962]
-position = Vector2(426, 536.00006)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=369506675]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=421851847]
-position = Vector2(896, 356.00006)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=852593352]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1215241542]
-position = Vector2(1359.0001, 193.00003)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=982401067]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=353575567]
-position = Vector2(1685, 732.0001)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=2056158962]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=2098331616]
-position = Vector2(793, 67.00018)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=1830399396]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=81144159]
-position = Vector2(359, -115)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=584081075]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=1824829245]
-position = Vector2(1678, 533.00024)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=1455883361]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=1215198120]
-position = Vector2(1651, -1387)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=1572478593]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1614382562]
-position = Vector2(1024.0001, -1621)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=257847616]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1286425500]
-position = Vector2(1401, 909.9999)
-scale = Vector2(72.86409, 1.7021658)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=902968191]
-scale = Vector2(0.31784505, 1)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="StaticBody2D13" type="StaticBody2D" parent="." unique_id=1375642473]
-position = Vector2(958, 1056)
-scale = Vector2(300, 1.702)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13" unique_id=276860698]
-scale = Vector2(0.31784505, 0.99999994)
-shape = SubResource("RectangleShape2D_0m38t")
-debug_color = Color(0.078327544, 0.48538435, 0.57286775, 0.41960785)
-
-[node name="Percadito" parent="." unique_id=1845132850 instance=ExtResource("1_fa6n5")]
-position = Vector2(780, 703)
-
-[node name="Percadito2" parent="." unique_id=1915203730 instance=ExtResource("1_fa6n5")]
-position = Vector2(395, 503)
-
-[node name="Percadito3" parent="." unique_id=1220691032 instance=ExtResource("1_fa6n5")]
-position = Vector2(751, 1017)
-
-[node name="Percadito4" parent="." unique_id=1452934302 instance=ExtResource("1_fa6n5")]
+[node name="Percadito4" parent="Pescaditos" unique_id=1452934302 instance=ExtResource("1_fa6n5")]
 position = Vector2(1071, 1014)
+
+[node name="Percadito5" parent="Pescaditos" unique_id=2075003969 instance=ExtResource("1_fa6n5")]
+position = Vector2(996, 449)
+
+[node name="Percadito6" parent="Pescaditos" unique_id=1447144854 instance=ExtResource("1_fa6n5")]
+position = Vector2(182, 201)
+
+[node name="Percadito7" parent="Pescaditos" unique_id=358386465 instance=ExtResource("1_fa6n5")]
+position = Vector2(1634, 440)
+
+[node name="Percadito8" parent="Pescaditos" unique_id=1257341404 instance=ExtResource("1_fa6n5")]
+position = Vector2(798, 122)
+
+[node name="Percadito9" parent="Pescaditos" unique_id=1637957688 instance=ExtResource("1_fa6n5")]
+position = Vector2(1075, -102)
+
+[node name="Percadito10" parent="Pescaditos" unique_id=1298918453 instance=ExtResource("1_fa6n5")]
+position = Vector2(2484, 1318)
+
+[node name="Percadito11" parent="Pescaditos" unique_id=1944067720 instance=ExtResource("1_fa6n5")]
+position = Vector2(1971, -368)
+
+[node name="Percadito12" parent="Pescaditos" unique_id=1208737619 instance=ExtResource("1_fa6n5")]
+position = Vector2(1857, -376)
+
+[node name="Percadito13" parent="Pescaditos" unique_id=1599585828 instance=ExtResource("1_fa6n5")]
+position = Vector2(1747, -376)
+
+[node name="Percadito14" parent="Pescaditos" unique_id=999717080 instance=ExtResource("1_fa6n5")]
+position = Vector2(1629, -376)
+
+[node name="Percadito15" parent="Pescaditos" unique_id=2031540127 instance=ExtResource("1_fa6n5")]
+position = Vector2(1530, -376)
+
+[node name="Percadito16" parent="Pescaditos" unique_id=2011373108 instance=ExtResource("1_fa6n5")]
+position = Vector2(444, -353)
+
+[node name="Percadito17" parent="Pescaditos" unique_id=860787543 instance=ExtResource("1_fa6n5")]
+position = Vector2(330, -361)
+
+[node name="Percadito18" parent="Pescaditos" unique_id=671179910 instance=ExtResource("1_fa6n5")]
+position = Vector2(220, -361)
+
+[node name="Percadito19" parent="Pescaditos" unique_id=1980885162 instance=ExtResource("1_fa6n5")]
+position = Vector2(102, -361)
+
+[node name="Percadito20" parent="Pescaditos" unique_id=1200075755 instance=ExtResource("1_fa6n5")]
+position = Vector2(3, -361)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1234662462]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
-tile_map_data = PackedByteArray("AAA7ABAAAAACAAAAAAA6ABAAAAAAAAAAAAAJAA0AAAACAAAAAAAIAA0AAAABAAAAAAAHAA0AAAABAAAAAAAGAA0AAAABAAAAAAAFAA0AAAABAAAAAAAEAA0AAAAAAAAAAAARAA0AAAACAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAANAA0AAAABAAAAAAAMAA0AAAAAAAAAAAAUAAsAAAACAAAAAAATAAsAAAABAAAAAAASAAsAAAABAAAAAAARAAsAAAABAAAAAAAQAAsAAAABAAAAAAAPAAsAAAAAAAAAAAAIAAsAAAACAAAAAAAHAAsAAAABAAAAAAAGAAsAAAABAAAAAAAFAAsAAAABAAAAAAAEAAsAAAABAAAAAAADAAsAAAAAAAAAAAANAAkAAAACAAAAAAAMAAkAAAABAAAAAAALAAkAAAABAAAAAAAKAAkAAAABAAAAAAAJAAkAAAABAAAAAAAIAAkAAAAAAAAAAAACAAcAAAAAAAAAAAAHAAcAAAACAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAAPAAUAAAAAAAAAAAASAAUAAAACAAAAAAARAAUAAAABAAAAAAAQAAUAAAABAAAAAAAWAAUAAAAAAAAAAAAaAAUAAAACAAAAAAAZAAUAAAABAAAAAAAYAAUAAAABAAAAAAAXAAUAAAABAAAAAAAMAAIAAAACAAAAAAALAAIAAAABAAAAAAAKAAIAAAABAAAAAAAJAAIAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAAAAAAAAAAEAAMAAAACAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAAAAAAAAAAOAP//AAACAAAAAAANAP//AAABAAAAAAAMAP//AAABAAAAAAALAP//AAABAAAAAAAKAP//AAABAAAAAAAJAP//AAAAAAAAAAAZAA0AAAACAAAAAAAYAA0AAAABAAAAAAAXAA0AAAABAAAAAAAWAA0AAAABAAAAAAAVAA0AAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAA0AAAACAAAAAAAIAA0AAAABAAAAAAAHAA0AAAABAAAAAAAGAA0AAAABAAAAAAAFAA0AAAABAAAAAAAEAA0AAAAAAAAAAAARAA0AAAACAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAANAA0AAAABAAAAAAAMAA0AAAAAAAAAAAAUAAsAAAACAAAAAAATAAsAAAABAAAAAAASAAsAAAABAAAAAAARAAsAAAABAAAAAAAQAAsAAAABAAAAAAAPAAsAAAAAAAAAAAAIAAsAAAACAAAAAAAHAAsAAAABAAAAAAAGAAsAAAABAAAAAAAFAAsAAAABAAAAAAAEAAsAAAABAAAAAAADAAsAAAAAAAAAAAANAAkAAAACAAAAAAAMAAkAAAABAAAAAAALAAkAAAABAAAAAAAKAAkAAAABAAAAAAAJAAkAAAABAAAAAAAIAAkAAAAAAAAAAAACAAcAAAAAAAAAAAAHAAcAAAACAAAAAAAGAAcAAAABAAAAAAAFAAcAAAABAAAAAAAEAAcAAAABAAAAAAADAAcAAAABAAAAAAAMAAIAAAACAAAAAAALAAIAAAABAAAAAAAKAAIAAAABAAAAAAAJAAIAAAABAAAAAAAIAAIAAAABAAAAAAAHAAIAAAAAAAAAAAAEAAMAAAACAAAAAAADAAMAAAABAAAAAAACAAMAAAABAAAAAAABAAMAAAABAAAAAAAAAAMAAAAAAAAAAAAOAP//AAACAAAAAAANAP//AAABAAAAAAAMAP//AAABAAAAAAALAP//AAABAAAAAAAKAP//AAABAAAAAAAJAP//AAAAAAAAAAAZAA0AAAACAAAAAAAYAA0AAAABAAAAAAAXAA0AAAABAAAAAAAWAA0AAAABAAAAAAAVAA0AAAAAAAAAAAAOABEAAAABAAAAAAANABEAAAABAAAAAAAMABEAAAABAAAAAAALABEAAAABAAAAAAAKABEAAAABAAAAAAAJABEAAAABAAAAAAAIABEAAAABAAAAAAAHABEAAAABAAAAAAAGABEAAAABAAAAAAAFABEAAAABAAAAAAAXABEAAAABAAAAAAAWABEAAAABAAAAAAAVABEAAAABAAAAAAAUABEAAAABAAAAAAATABEAAAABAAAAAAASABEAAAABAAAAAAARABEAAAABAAAAAAAQABEAAAABAAAAAAAPABEAAAABAAAAAAAAABEAAAABAAAAAAABABEAAAABAAAAAAACABEAAAABAAAAAAADABEAAAABAAAAAAAEABEAAAABAAAAAAAcABEAAAABAAAAAAAbABEAAAABAAAAAAAaABEAAAABAAAAAAAZABEAAAABAAAAAAAYABEAAAABAAAAAAD//xEAAAABAAAAAAAeABEAAAABAAAAAAAdABEAAAABAAAAAAANAAYAAAACAAAAAAAMAAYAAAABAAAAAAALAAYAAAABAAAAAAAKAAYAAAAAAAAAAAAFAAAAAAACAAAAAAAEAAAAAAABAAAAAAADAAAAAAABAAAAAAACAAAAAAAAAAAAAAAWAAIAAAACAAAAAAAVAAIAAAABAAAAAAAUAAIAAAABAAAAAAATAAIAAAABAAAAAAASAAIAAAAAAAAAAAAUAAgAAAACAAAAAAATAAgAAAABAAAAAAASAAgAAAABAAAAAAARAAgAAAABAAAAAAAQAAgAAAAAAAAAAAAZAAcAAAACAAAAAAAYAAcAAAABAAAAAAAXAAcAAAABAAAAAAAWAAcAAAAAAAAAAAATAAYAAAAAAAAAAAAUAAYAAAABAAAAAAAVAAYAAAACAAAAAAAVAAQAAAAAAAAAAAAWAAQAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAABAAAAAAAZAAQAAAACAAAAAAARAAQAAAACAAAAAAAQAAQAAAABAAAAAAAPAAQAAAABAAAAAAAOAAQAAAAAAAAAAAAJAAQAAAACAAAAAAAIAAQAAAABAAAAAAAHAAQAAAABAAAAAAAGAAQAAAAAAAAAAAAJAPz/AAACAAAAAAAIAPz/AAABAAAAAAAHAPz/AAABAAAAAAAGAPz/AAABAAAAAAAFAPz/AAABAAAAAAAEAPz/AAABAAAAAAADAPz/AAABAAAAAAACAPz/AAABAAAAAAABAPz/AAABAAAAAAD///z/AAAAAAAAAAAAAPz/AAABAAAAAAAZAPz/AAACAAAAAAAYAPz/AAABAAAAAAAXAPz/AAABAAAAAAAWAPz/AAABAAAAAAAVAPz/AAABAAAAAAAUAPz/AAABAAAAAAATAPz/AAABAAAAAAASAPz/AAABAAAAAAARAPz/AAABAAAAAAAQAPz/AAABAAAAAAAPAPz/AAABAAAAAAAOAPz/AAAAAAAAAAAbAA8AAAABAAAAAAAcAA8AAAABAAAAAAAdAA8AAAACAAAAAAAaAA8AAAAAAAAAAAAaAAoAAAAAAAAAAAAbAAoAAAABAAAAAAAcAAoAAAABAAAAAAAdAAoAAAACAAAAAAAZAP7/AAAAAAAAAAAaAP7/AAABAAAAAAAbAP7/AAABAAAAAAAcAP7/AAABAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAZAAIAAAAAAAAAAAAaAAIAAAABAAAAAAAbAAIAAAABAAAAAAAcAAIAAAABAAAAAAAdAAIAAAACAAAAAAAdAAAAAAACAAAAAAAdAP7/AAACAAAAAAAgAAQAAAABAAAAAGAgAAUAAAABAAAAAGAgAAYAAAABAAAAAGAgAAcAAAABAAAAAGAgAAgAAAABAAAAAGAgAAkAAAABAAAAAGAgAAoAAAABAAAAAGAgAAsAAAABAAAAAGAgAAwAAAABAAAAAGAgAA0AAAABAAAAAGAgAA4AAAABAAAAAGAgAA8AAAABAAAAAGAgABAAAAABAAAAAGAgABEAAAABAAAAAGAfABEAAAABAAAAAAD+//j/AAABAAAAAFD+//n/AAABAAAAAFD+//r/AAABAAAAAFD+//v/AAABAAAAAFD+//z/AAABAAAAAFD+//3/AAABAAAAAFD+//7/AAABAAAAAFD+////AAABAAAAAFD+/wAAAAABAAAAAFD+/wEAAAABAAAAAFD+/wIAAAABAAAAAFD+/wMAAAABAAAAAFD+/wQAAAABAAAAAFD+/wUAAAABAAAAAFD+/wYAAAABAAAAAFD+/wcAAAABAAAAAFD+/wgAAAABAAAAAFD+/wkAAAABAAAAAFD+/woAAAABAAAAAFD+/wsAAAABAAAAAFD+/wwAAAABAAAAAFD+/w0AAAABAAAAAFD+/w4AAAABAAAAAFD+/w8AAAABAAAAAFD+/xAAAAABAAAAAFD+/xEAAAABAAAAAFD///j/AAABAAAAADAAAPj/AAABAAAAADABAPj/AAABAAAAADACAPj/AAABAAAAADADAPj/AAABAAAAADAEAPj/AAABAAAAADAFAPj/AAABAAAAADAGAPj/AAABAAAAADAHAPj/AAABAAAAADAIAPj/AAABAAAAADAJAPj/AAABAAAAADAKAPj/AAABAAAAADALAPj/AAABAAAAADAMAPj/AAABAAAAADANAPj/AAABAAAAADAOAPj/AAABAAAAADAPAPj/AAABAAAAADAQAPj/AAABAAAAADARAPj/AAABAAAAADASAPj/AAABAAAAADATAPj/AAABAAAAADAUAPj/AAABAAAAADAVAPj/AAABAAAAADAWAPj/AAABAAAAADAXAPj/AAABAAAAADAYAPj/AAABAAAAADAZAPj/AAABAAAAADAaAPj/AAABAAAAADAbAPj/AAABAAAAADAcAPj/AAABAAAAADAdAPj/AAABAAAAADAeAPj/AAABAAAAADAfAPj/AAABAAAAADAgAPj/AAABAAAAADAgAPn/AAABAAAAAGAgAPr/AAABAAAAAGAgAPv/AAABAAAAAGAgAPz/AAABAAAAAGAgAP3/AAABAAAAAGAgAP7/AAABAAAAAGAgAP//AAABAAAAAGAgAAAAAAABAAAAAGAgAAEAAAABAAAAAGAgAAIAAAABAAAAAGAgAAMAAAABAAAAAGARAA8AAAAAAAAAAAASAA8AAAABAAAAAAATAA8AAAABAAAAAAAUAA8AAAABAAAAAAAVAA8AAAACAAAAAAAAAA8AAAAAAAAAAAABAA8AAAABAAAAAAACAA8AAAACAAAAAAAeAAYAAAACAAAAAAAdAAYAAAABAAAAAAAcAAYAAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAABAAAAAAALAA8AAAABAAAAAAAMAA8AAAACAAAAAAAMAAsAAAACAAAAAAALAAsAAAAAAAAAAAAMAP3/AAACAAAAAAALAP3/AAAAAAAAAAAWAP7/AAACAAAAAAAVAP7/AAABAAAAAAAUAP7/AAABAAAAAAATAP7/AAABAAAAAAASAP7/AAABAAAAAAARAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAACAAAAAAAGAP7/AAABAAAAAAAHAP7/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_7hudg")

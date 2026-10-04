@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://la0fvfuvmlvy"
-path="res://.godot/imported/tile 1 hielo-1.png.png-8d5f78bc02647edcbb48fb2043236662.ctex"
+path="res://.godot/imported/tile 1 hielo-1.png.png-e3630bbcf7f4693d881c94c39f42b0cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imagenes/tile 1 hielo-1.png.png"
-dest_files=["res://.godot/imported/tile 1 hielo-1.png.png-8d5f78bc02647edcbb48fb2043236662.ctex"]
+source_file="res://Assets/Tilesets/tile 1 hielo-1.png.png"
+dest_files=["res://.godot/imported/tile 1 hielo-1.png.png-e3630bbcf7f4693d881c94c39f42b0cc.ctex"]
 
 [params]
 

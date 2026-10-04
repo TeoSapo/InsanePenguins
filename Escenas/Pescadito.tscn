@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c66hto4d8j1qt"]
 
-[ext_resource type="Texture2D" uid="uid://bhb11x2lr24n1" path="res://Assets/Sprites/pescadito brillante v2.png" id="1_rwwqh"]
-[ext_resource type="Script" uid="uid://ls4f3tgjpj28" path="res://Scripts/percadito.gd" id="1_uy5wg"]
+[ext_resource type="Script" uid="uid://ls4f3tgjpj28" path="res://Scripts/Pescadito.gd" id="1_3bakt"]
+[ext_resource type="Texture2D" uid="uid://bhb11x2lr24n1" path="res://Assets/Sprites/pescadito brillante v2.png" id="2_jnsab"]
 
 [sub_resource type="Animation" id="Animation_rwwqh"]
 resource_name = "Normal"
@@ -41,43 +41,43 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uy5wg"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ivfq4"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y1c5"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6iv3l"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sc00"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cw6px"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6x66"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80qjm"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mgb7a"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8laqo"]
-atlas = ExtResource("1_rwwqh")
+atlas = ExtResource("2_jnsab")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7hudg"]
@@ -122,7 +122,7 @@ animations = [{
 size = Vector2(30, 12)
 
 [node name="Percadito" type="Node2D" unique_id=1845132850]
-script = ExtResource("1_uy5wg")
+script = ExtResource("1_3bakt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2003799740]
 root_node = NodePath("../AnimatedSprite2D")

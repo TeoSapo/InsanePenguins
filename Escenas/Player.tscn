@@ -6,10 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb4fy"]
-radius = 15.5
-height = 48.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
 atlas = ExtResource("2_kpjcp")
 region = Rect2(0, 0, 32, 32)
@@ -135,25 +131,25 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Saltando",
-"speed": 5.0
+"speed": 12.0
 }]
 
-[node name="Player1" type="CharacterBody2D" unique_id=245024439]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hb4fy"]
+radius = 14.0
+height = 50.0
+
+[node name="Pinguino" type="CharacterBody2D" unique_id=245024439]
 collision_mask = 3
 script = ExtResource("1_t42c4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779881932]
-position = Vector2(-1, 2)
-shape = SubResource("CapsuleShape2D_hb4fy")
-debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130779477]
 texture_filter = 1
+position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Idle"
+animation = &"Saltando"
 autoplay = "Idle"
-frame_progress = 0.11404128
+frame_progress = 0.017625228
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
@@ -164,3 +160,15 @@ pivot_offset = Vector2(60, 12)
 text = "NOMBRE"
 horizontal_alignment = 1
 clip_text = true
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1779881932]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_hb4fy")
+debug_color = Color(0.8264984, 0.019354168, 5.7756904e-07, 0.41960785)
+
+[node name="Collision2" type="CollisionShape2D" parent="." unique_id=1987126459]
+position = Vector2(2, 11)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hb4fy")
+disabled = true
+debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
