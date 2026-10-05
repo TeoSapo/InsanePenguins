@@ -20,12 +20,8 @@ func _ready():
 	$HBoxContainer/VentanaP2/SubViewport.world_2d = Nivel
 	InsanePenguins.P1Score = 0
 	InsanePenguins.P2Score = 0
-	
-	
 	actualizar_puntos()
 	
-func _process(delta: float) -> void:
-	final_nivel()
 	
 func actualizar_puntos():
 	p1_score.text=InsanePenguins.P1Name+": "+str(InsanePenguins.P1Score)
@@ -33,10 +29,7 @@ func actualizar_puntos():
 
 
 func _on_timer_nivel_timeout() -> void:
-	tiempo_juego.value -= 0.6
-	
-func final_nivel():
+	tiempo_juego.value -= InsanePenguins.TIC
 	if tiempo_juego.value <= 0:
-		print ("el nivel termino")
-		get_tree().paused
-		get_tree().change_scene_to_file("res://Escenas/UI/pantalla_final.tscn")
+		InsanePenguins.No_hay_mas_tiempo.emit()
+	

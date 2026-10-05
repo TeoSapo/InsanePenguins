@@ -8,6 +8,7 @@ const SLIP_SPEED = 500
 @export var nombre:String 
 @export var colorvisible:Color
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sonidoSFX: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
 	estado = ESTADOS[0]
@@ -54,8 +55,10 @@ func mover(delta,jugador: CharacterBody2D):
 		if velocity.x != 0:
 			velocity.x = direction *  SLIP_SPEED
 			estado = "PANZASO"
+			
 	
 	if  Input.is_action_just_pressed(playerTecla+"UP") and is_on_floor():
+		sonidoSFX.play()
 		velocity.y = -JUMP_SPEED
 		estado = "SALTANDO"
 		
@@ -72,3 +75,4 @@ func animar(jugador:CharacterBody2D):
 			sprite.play("Caminando")	
 		"PANZASO":
 			sprite.play("Panzaso")
+			

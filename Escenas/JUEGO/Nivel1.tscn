@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Escenas/CLASES/Player.tscn" id="4_kg8bm"]
 [ext_resource type="PackedScene" uid="uid://becljr1j33h6g" path="res://Escenas/CLASES/tiempo.tscn" id="5_e0pp6"]
 [ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="6_uu88g"]
+[ext_resource type="AudioStream" uid="uid://dkbphokdw6sy0" path="res://Assets/Musica/Musica01.ogg" id="7_1t2md"]
 
 [node name="Nivel1" type="Node2D" unique_id=1405768944]
 script = ExtResource("1_ghkfm")
@@ -83,5 +84,11 @@ offset_right = 104.0
 offset_bottom = 31.0
 theme = ExtResource("6_uu88g")
 text = "PUNTAJE"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=531453782]
+stream = ExtResource("7_1t2md")
+pitch_scale = 1.5
+autoplay = true
+bus = &"MUSICA"
 
 [connection signal="timeout" from="TimerNivel" to="." method="_on_timer_nivel_timeout"]

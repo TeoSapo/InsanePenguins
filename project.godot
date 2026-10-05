@@ -15,6 +15,10 @@ run/main_scene="res://Escenas/JUEGO/Nivel1.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/Imagenes/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://73gbcyfvievq"
+
 [autoload]
 
 InsanePenguins="*uid://l50pvc1q02nd"

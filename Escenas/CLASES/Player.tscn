@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bl76hhgwkm3rh" path="res://Assets/Sprites/Idle Pinguino v2.png" id="3_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
+[ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="6_7avog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
 atlas = ExtResource("2_kpjcp")
@@ -171,3 +172,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_hb4fy")
 disabled = true
 debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=845592127]
+stream = ExtResource("6_7avog")
+bus = &"SFX"
