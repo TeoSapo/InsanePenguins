@@ -1,5 +1,9 @@
 extends Node
 
+@onready var p_1_score: Label = $P1Score
+@onready var p_2_score: Label = $P2Score
+
+
 signal Obtiene_Pescadito
 signal Actualizar_Score
 
@@ -14,10 +18,10 @@ func _ready() -> void:
 	P1Score = 0
 	P2Score = 0
 	
-	
 func on_Obtiene_Pescadito(player:CharacterBody2D):
 	sumar_puntos(player)
 	
+
 	
 func sumar_puntos(player:CharacterBody2D):
 	if player.name == "Player1":

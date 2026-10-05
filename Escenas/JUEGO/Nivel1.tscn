@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ybxc44boeb0n"]
 
 [ext_resource type="Script" uid="uid://p01d0v16yepg" path="res://Scripts/Nivel1.gd" id="1_ghkfm"]
-[ext_resource type="Texture2D" uid="uid://b607kb361my65" path="res://Assets/Imagenes/Fondo.jpg" id="2_uu88g"]
+[ext_resource type="Texture2D" uid="uid://d4bs6gyo77pjt" path="res://Assets/Imagenes/borde pantalla v2.png" id="2_ghkfm"]
 [ext_resource type="PackedScene" uid="uid://dx1sve0sn6alr" path="res://Escenas/JUEGO/dibujo_nivel.tscn" id="3_1t2md"]
 [ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Escenas/CLASES/Player.tscn" id="4_kg8bm"]
 [ext_resource type="PackedScene" uid="uid://becljr1j33h6g" path="res://Escenas/CLASES/tiempo.tscn" id="5_e0pp6"]
+[ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="6_uu88g"]
 
 [node name="Nivel1" type="Node2D" unique_id=1405768944]
 script = ExtResource("1_ghkfm")
@@ -13,28 +14,12 @@ script = ExtResource("1_ghkfm")
 autostart = true
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1890496254]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 969.11115
-offset_bottom = 544.0
-texture = ExtResource("2_uu88g")
+offset_left = -1.0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("2_ghkfm")
 expand_mode = 3
-
-[node name="P1Score" type="Label" parent="." unique_id=1659271895]
-offset_left = 32.0
-offset_top = 3.0
-offset_right = 100.0
-offset_bottom = 26.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "PUNTAJE"
-
-[node name="P2Score" type="Label" parent="." unique_id=1494590940]
-offset_left = 485.0
-offset_top = 2.0
-offset_right = 553.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "PUNTAJE"
+flip_v = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1362839326]
 custom_maximum_size = Vector2(960, 540)
@@ -82,5 +67,21 @@ offset_top = 489.0
 offset_right = 37.000004
 offset_bottom = 489.0
 scale = Vector2(3.480001, 26.36)
+
+[node name="P2Score" type="Label" parent="." unique_id=1494590940]
+offset_left = 485.0
+offset_top = 6.0
+offset_right = 558.0
+offset_bottom = 30.0
+theme = ExtResource("6_uu88g")
+text = "PUNTAJE"
+
+[node name="P1Score" type="Label" parent="." unique_id=1359402447]
+offset_left = 31.0
+offset_top = 7.0
+offset_right = 104.0
+offset_bottom = 31.0
+theme = ExtResource("6_uu88g")
+text = "PUNTAJE"
 
 [connection signal="timeout" from="TimerNivel" to="." method="_on_timer_nivel_timeout"]

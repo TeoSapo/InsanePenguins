@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfowyf2po2abi"
-path="res://.godot/imported/Player 2 Pinguino naranja.png-0449c53bdf5b2e615f7cce7b5e8b0bd1.ctex"
+uid="uid://c5wnbm1g8pemq"
+path="res://.godot/imported/final screen.png-281219da5af4d7378a779dd3892534e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player 2 Pinguino naranja.png"
-dest_files=["res://.godot/imported/Player 2 Pinguino naranja.png-0449c53bdf5b2e615f7cce7b5e8b0bd1.ctex"]
+source_file="res://Assets/Imagenes/final screen.png"
+dest_files=["res://.godot/imported/final screen.png-281219da5af4d7378a779dd3892534e1.ctex"]
 
 [params]
 

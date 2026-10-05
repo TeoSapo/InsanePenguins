@@ -7,6 +7,7 @@ extends Node2D
 @onready var player_2: CharacterBody2D = $HBoxContainer/VentanaP2/SubViewport/Player2
 @onready var dibujo_nivel: Node = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel
 
+
 func _ready():
 
 	InsanePenguins.Actualizar_Score.connect(actualizar_puntos)
@@ -21,16 +22,21 @@ func _ready():
 	InsanePenguins.P2Score = 0
 	
 	
-	
-	
 	actualizar_puntos()
 	
-	
+func _process(delta: float) -> void:
+	final_nivel()
 	
 func actualizar_puntos():
-	p1_score.text=InsanePenguins.P1Name+":"+str(InsanePenguins.P1Score)
-	p2_score.text=InsanePenguins.P2Name+":"+str(InsanePenguins.P2Score)
+	p1_score.text=InsanePenguins.P1Name+": "+str(InsanePenguins.P1Score)
+	p2_score.text=InsanePenguins.P2Name+": "+str(InsanePenguins.P2Score)
 
 
 func _on_timer_nivel_timeout() -> void:
 	tiempo_juego.value -= 0.6
+	
+func final_nivel():
+	if tiempo_juego.value <= 0:
+		print ("el nivel termino")
+		get_tree().paused
+		get_tree().change_scene_to_file("res://Escenas/UI/pantalla_final.tscn")

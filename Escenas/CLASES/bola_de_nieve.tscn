@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cx5dcwa6ulwce"]
+
+[ext_resource type="Texture2D" uid="uid://cspmwlg3l0mnl" path="res://Assets/Sprites/golpe Bola de nieve.png" id="1_26udj"]
+[ext_resource type="Texture2D" uid="uid://dblnrchysr0cb" path="res://Assets/Sprites/Bola de nieve-1.png.png" id="2_qltcx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyq77"]
+atlas = ExtResource("1_26udj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jwqr"]
+atlas = ExtResource("1_26udj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gnfq"]
+atlas = ExtResource("1_26udj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0n4d"]
+atlas = ExtResource("1_26udj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls217"]
+atlas = ExtResource("1_26udj")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wck8j"]
+atlas = ExtResource("1_26udj")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqa1t"]
+atlas = ExtResource("2_qltcx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hudg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyq77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jwqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gnfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0n4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ls217")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wck8j")
+}],
+"loop": 1,
+"name": &"BolaRompiendo",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqa1t")
+}],
+"loop": 1,
+"name": &"Entera",
+"speed": 5.0
+}]
+
+[node name="BolaDeNieve" type="Node2D" unique_id=817514930]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454290041]
+sprite_frames = SubResource("SpriteFrames_7hudg")
+animation = &"Entera"
+frame_progress = 0.30867472

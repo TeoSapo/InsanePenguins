@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cclfwl7uqubqu"
-path="res://.godot/imported/pescadito brillante.png-bd1185c843a495f81143a07a29d6d1be.ctex"
+uid="uid://d4bs6gyo77pjt"
+path="res://.godot/imported/borde pantalla v2.png-61e03e7c9653a7754a2e8ca908e3cb1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/pescadito brillante.png"
-dest_files=["res://.godot/imported/pescadito brillante.png-bd1185c843a495f81143a07a29d6d1be.ctex"]
+source_file="res://Assets/Imagenes/borde pantalla v2.png"
+dest_files=["res://.godot/imported/borde pantalla v2.png-61e03e7c9653a7754a2e8ca908e3cb1f.ctex"]
 
 [params]
 
