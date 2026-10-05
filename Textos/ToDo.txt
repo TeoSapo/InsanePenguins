@@ -19,3 +19,5 @@ Dudas:
 	pinguino puede hacer caca mientras vuela? (que hace la caca?)
 	que pasa cuando se chocan? se chocan? (ver mascara de colición)
 		¿efecto visuales choque, pantalla tiembla?
+
+coordenadas p1: 127.0 x, 1886.0 y

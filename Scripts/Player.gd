@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100
+const SPEED = 200
 const JUMP_SPEED = 800.0
 const SLIP_SPEED = 500
 @onready var ESTADOS = ["IDLE","CAMINANDO","SALTANDO","PANZASO"]

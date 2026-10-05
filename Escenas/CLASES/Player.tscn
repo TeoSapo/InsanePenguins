@@ -89,7 +89,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Caminando",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,9 +147,8 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Saltando"
+animation = &"Caminando"
 autoplay = "Idle"
-frame_progress = 0.017625228
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
