@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/Sprites/spritesheet pinguino.png" id="2_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bl76hhgwkm3rh" path="res://Assets/Sprites/Idle Pinguino v2.png" id="3_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
+[ext_resource type="Texture2D" uid="uid://ddee1488mnqc3" path="res://Assets/Sprites/pinguino noqueado.png" id="4_7avog"]
+[ext_resource type="Texture2D" uid="uid://b6jdvtbfxb6mt" path="res://Assets/Sprites/pingui lanzando.png" id="4_b7pb7"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 [ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="6_7avog"]
 
@@ -38,6 +40,46 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_urfe6"]
 atlas = ExtResource("3_5hhfp")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vgip"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl8u7"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibbfr"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnuic"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s7gf"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tis3k"]
+atlas = ExtResource("4_b7pb7")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7pb7"]
+atlas = ExtResource("4_7avog")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ydut"]
+atlas = ExtResource("4_7avog")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfgta"]
+atlas = ExtResource("4_7avog")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1j0k"]
+atlas = ExtResource("4_7avog")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
 atlas = ExtResource("3_kne1u")
@@ -105,6 +147,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1vgip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl8u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibbfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnuic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s7gf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tis3k")
+}],
+"loop": 1,
+"name": &"Lanzando",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7pb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ydut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfgta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1j0k")
+}],
+"loop": 1,
+"name": &"Noqueado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e80uo")
 }, {
 "duration": 1.0,
@@ -148,8 +230,9 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Caminando"
+animation = &"Lanzando"
 autoplay = "Idle"
+frame_progress = 0.9855864
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
