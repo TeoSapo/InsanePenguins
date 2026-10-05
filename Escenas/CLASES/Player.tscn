@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6jdvtbfxb6mt" path="res://Assets/Sprites/pingui lanzando.png" id="4_b7pb7"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 [ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="6_7avog"]
+[ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="8_tfgta"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
 atlas = ExtResource("2_kpjcp")
@@ -236,12 +237,15 @@ frame_progress = 0.9855864
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
-offset_top = -55.0
+offset_top = -48.0
 offset_right = 60.0
-offset_bottom = -31.0
+offset_bottom = -24.0
 pivot_offset = Vector2(60, 12)
+theme = ExtResource("8_tfgta")
+theme_override_font_sizes/font_size = 14
 text = "NOMBRE"
 horizontal_alignment = 1
+vertical_alignment = 1
 clip_text = true
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1779881932]
@@ -258,4 +262,3 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=845592127]
 stream = ExtResource("6_7avog")
-bus = &"SFX"
