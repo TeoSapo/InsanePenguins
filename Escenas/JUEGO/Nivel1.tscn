@@ -45,6 +45,7 @@ nombre = "TEO"
 colorvisible = Color(0.9550045, 1.3284087e-05, 0.63187075, 1)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/VentanaP1/SubViewport/Player1" unique_id=1234909652]
+limit_bottom = 2050
 
 [node name="VentanaP2" type="SubViewportContainer" parent="HBoxContainer" unique_id=1917670500]
 layout_mode = 2
@@ -61,6 +62,7 @@ nombre = "JAZ"
 colorvisible = Color(0.18010753, 0.658579, 0.07534861, 1)
 
 [node name="Camera2D" type="Camera2D" parent="HBoxContainer/VentanaP2/SubViewport/Player2" unique_id=287443466]
+limit_bottom = 2050
 
 [node name="TiempoJuego" parent="." unique_id=329250897 instance=ExtResource("5_e0pp6")]
 offset_left = 37.000004
