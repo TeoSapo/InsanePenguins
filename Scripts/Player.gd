@@ -10,9 +10,12 @@ const SLIP_SPEED = 500
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sonidoSFX: AudioStreamPlayer = $AudioStreamPlayer
 
+@export_range(0, 1) var indice_jugador = 0
+
 func _ready() -> void:
 	estado = "IDLE"
-	$Label.text = nombre
+	#$Label.text = nombre 
+	$Nombre.text = InsanePenguins.nombres[indice_jugador]
 
 func _physics_process(delta: float) -> void:
 	

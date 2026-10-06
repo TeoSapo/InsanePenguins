@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dr3ifshg0yeq8"]
+
+[ext_resource type="Script" uid="uid://d1vmhbsvdk3mo" path="res://Scripts/selector.gd" id="1_vy1wu"]
+
+[node name="Selector" type="HBoxContainer" unique_id=920122249]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 307.0
+offset_right = -307.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("1_vy1wu")
+
+[node name="Letra1" type="Label" parent="." unique_id=2122392057]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letra2" type="Label" parent="." unique_id=1903594575]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letra3" type="Label" parent="." unique_id=504874899]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1

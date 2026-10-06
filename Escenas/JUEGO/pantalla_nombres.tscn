@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://k35vintclail"]
+
+[ext_resource type="PackedScene" uid="uid://dr3ifshg0yeq8" path="res://Escenas/JUEGO/selector.tscn" id="1_c6h8y"]
+[ext_resource type="Script" uid="uid://bsw5se7raffcq" path="res://Scripts/pantalla_nombres.gd" id="1_dkrkm"]
+
+[node name="pantallaNombres" type="Control" unique_id=1303972667]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkrkm")
+
+[node name="Titulo" type="Label" parent="." unique_id=836986272]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_right = 133.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "ELEGI TU NOMBRE"
+horizontal_alignment = 1
+
+[node name="nombreP1" type="Label" parent="." unique_id=2130331977]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 317.0
+offset_bottom = 155.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "JUGADOR 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectorJ1" parent="." unique_id=920122249 instance=ExtResource("1_c6h8y")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 21.0
+offset_right = -583.0
+
+[node name="nombreP2" type="Label" parent="." unique_id=2045980760]
+layout_mode = 1
+offset_left = 658.0
+offset_top = 100.0
+offset_right = 875.0
+offset_bottom = 155.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "JUGADOR 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectorJ2" parent="." unique_id=2097014146 instance=ExtResource("1_c6h8y")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 579.0
+offset_right = -25.0
+
+[node name="Ayuda" type="Label" parent="." unique_id=1716198764]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.0
+offset_top = -75.0
+offset_right = 114.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Arriba / Abajo = cambiar letra --- Izquierda = volver --- Aceptar = siguiente"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -295,7 +295,7 @@ sprite_frames = SubResource("SpriteFrames_kne1u")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="Label" type="Label" parent="." unique_id=1524383921]
+[node name="Nombre" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
 offset_top = -48.0
 offset_right = 60.0
