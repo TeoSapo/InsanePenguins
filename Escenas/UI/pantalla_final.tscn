@@ -15,8 +15,22 @@
 particle_flag_disable_z = true
 angle_min = 1.0728835e-05
 angle_max = 360.00003
+direction = Vector3(-1, -1, 0)
+spread = 50.0
+flatness = 0.067
+initial_velocity_max = 80.42
+gravity = Vector3(0, 9.8, 0)
+scale_min = 0.19999999
+scale_max = 0.39999998
+hue_variation_min = -0.33
+hue_variation_max = 0.39999998
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cmblm"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
 direction = Vector3(1, -1, 0)
-spread = 91.667
+spread = 50.0
 flatness = 0.067
 initial_velocity_max = 80.42
 gravity = Vector3(0, 9.8, 0)
@@ -60,15 +74,27 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1622473951]
-position = Vector2(611, 236)
+[node name="ConfettiGanador1" type="GPUParticles2D" parent="." unique_id=1622473951]
+position = Vector2(355, 249)
 emitting = false
-amount = 40
+amount = 80
 texture = ExtResource("4_cmblm")
-lifetime = 10.0
+lifetime = 30.0
 one_shot = true
 speed_scale = 8.21
+explosiveness = 0.2
 process_material = SubResource("ParticleProcessMaterial_hb4fy")
+
+[node name="ConfettiGanador2" type="GPUParticles2D" parent="." unique_id=384034856]
+position = Vector2(605, 249)
+emitting = false
+amount = 80
+texture = ExtResource("4_cmblm")
+lifetime = 30.0
+one_shot = true
+speed_scale = 8.21
+explosiveness = 0.2
+process_material = SubResource("ParticleProcessMaterial_cmblm")
 
 [node name="HieloScoreP1" type="TextureRect" parent="." unique_id=1002880019]
 layout_mode = 1
