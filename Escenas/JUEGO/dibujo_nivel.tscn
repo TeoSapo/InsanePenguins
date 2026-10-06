@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://dx1sve0sn6alr"]
 
 [ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/CLASES/Pescadito.tscn" id="1_75r1h"]
+[ext_resource type="Texture2D" uid="uid://dklkkatkytjul" path="res://Assets/Imagenes/montañas fondo claras.png" id="1_x6ve0"]
 [ext_resource type="Texture2D" uid="uid://dhrsqru12nku6" path="res://Assets/Imagenes/Plataformas.png" id="2_qllr2"]
+[ext_resource type="Texture2D" uid="uid://cjilpdhwuu8jt" path="res://Assets/Imagenes/montañas nevadas v2.png" id="2_tqc8v"]
 [ext_resource type="Texture2D" uid="uid://ckpgir6e2enia" path="res://Assets/Imagenes/tile 1 hielo pared-1.png.png" id="3_wu0i2"]
 [ext_resource type="Texture2D" uid="uid://ou1y708welh1" path="res://Assets/Imagenes/copo Nieve-1.png.png" id="4_qllr2"]
 
@@ -84,6 +86,36 @@ offset_bottom = 6993.4004
 rotation = -1.5707964
 texture = SubResource("GradientTexture1D_2x4vk")
 expand_mode = 1
+
+[node name="Montañas distancia" type="TextureRect" parent="." unique_id=1113467096]
+offset_left = -303.0
+offset_top = 742.0
+offset_right = 2506.0
+offset_bottom = 2168.0
+texture = ExtResource("1_x6ve0")
+
+[node name="Montañas distancia2" type="TextureRect" parent="." unique_id=1428334578]
+offset_left = 2303.0
+offset_top = 854.0
+offset_right = 4663.0
+offset_bottom = 2134.0
+texture = ExtResource("1_x6ve0")
+
+[node name="Montañas frente" type="TextureRect" parent="." unique_id=1788247085]
+offset_left = 62.99997
+offset_top = 1358.0
+offset_right = 3139.2476
+offset_bottom = 3022.0
+scale = Vector2(0.485, 0.485)
+texture = ExtResource("2_tqc8v")
+
+[node name="Montañas frente2" type="TextureRect" parent="." unique_id=676934116]
+offset_left = 1790.0
+offset_top = 1258.0
+offset_right = 4858.0
+offset_bottom = 2922.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_tqc8v")
 
 [node name="Pescaditos" type="Node" parent="." unique_id=1904559500]
 

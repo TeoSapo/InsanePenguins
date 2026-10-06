@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://5556pn35mj08" path="res://Scripts/Player.gd" id="1_t42c4"]
 [ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/Sprites/spritesheet pinguino.png" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://bgk725v07u4r0" path="res://Assets/Sprites/pingui congelado-1.png.png" id="3_1vgip"]
 [ext_resource type="Texture2D" uid="uid://bl76hhgwkm3rh" path="res://Assets/Sprites/Idle Pinguino v2.png" id="3_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
 [ext_resource type="Texture2D" uid="uid://ddee1488mnqc3" path="res://Assets/Sprites/pinguino noqueado.png" id="4_7avog"]
 [ext_resource type="Texture2D" uid="uid://b6jdvtbfxb6mt" path="res://Assets/Sprites/pingui lanzando.png" id="4_b7pb7"]
+[ext_resource type="Texture2D" uid="uid://w65wuapnvkpk" path="res://Assets/Sprites/pingui descongelando.png" id="4_sl8u7"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 [ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="6_7avog"]
 [ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="8_tfgta"]
@@ -33,6 +35,34 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_reqdc"]
 atlas = ExtResource("2_kpjcp")
 region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bsng"]
+atlas = ExtResource("3_1vgip")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxn5r"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m65i5"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83j3i"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuglb"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0678o"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17a7g"]
+atlas = ExtResource("4_sl8u7")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2dk4"]
 atlas = ExtResource("3_5hhfp")
@@ -137,6 +167,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0bsng")
+}],
+"loop": 1,
+"name": &"Congelado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxn5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m65i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83j3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuglb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0678o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17a7g")
+}],
+"loop": 1,
+"name": &"Descongelar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_j2dk4")
 }, {
 "duration": 1.0,
@@ -231,9 +292,9 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Lanzando"
+animation = &"Descongelar"
 autoplay = "Idle"
-frame_progress = 0.9764559
+frame_progress = 0.8984739
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
