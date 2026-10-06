@@ -1,6 +1,7 @@
 extends Control
 const COPO_NIEVE = preload("res://Escenas/UI/copo_nieve.tscn")
-
+@onready var confetti_ganador_1: GPUParticles2D = $ConfettiGanador1
+@onready var confetti_ganador_2: GPUParticles2D = $ConfettiGanador2
 
 
 func _ready() -> void:
@@ -14,13 +15,15 @@ func _process(delta: float) -> void:
 	pass
 func _ganador():
 	if InsanePenguins.P1Score > InsanePenguins.P2Score:
+		confetti_ganador_1.emitting = true
 		$Ganador.text = "GANÓ " + InsanePenguins.P1Name + "!"
 	elif InsanePenguins.P1Score < InsanePenguins.P2Score:
+		confetti_ganador_2.emitting = true
 		$Ganador.text = "GANÓ " + InsanePenguins.P2Name + "!"
 	else:
 		$Ganador.text = "ES UN EMPATE!"
-
-
+		confetti_ganador_1.emitting = true
+		confetti_ganador_2.emitting = true
 
 func _on_timer_timeout() -> void:
 	var copoInstancia = COPO_NIEVE.instantiate()
