@@ -9,7 +9,7 @@
 [ext_resource type="Theme" uid="uid://o2oc5e34ld03" path="res://Escenas/UI/puntajeTheme.tres" id="5_frb8w"]
 [ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="5_us2dy"]
 [ext_resource type="FontFile" uid="uid://01pkremc2qev" path="res://Assets/Fuentes/Yellow Banana.otf" id="8_qoqeu"]
-[ext_resource type="PackedScene" uid="uid://c75g2enk86h68" path="res://Escenas/UI/copo_nieve.tscn" id="9_qoqeu"]
+[ext_resource type="PackedScene" uid="uid://c75g2enk86h68" path="res://Escenas/CLASES/copo_nieve.tscn" id="9_qoqeu"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hb4fy"]
 particle_flag_disable_z = true

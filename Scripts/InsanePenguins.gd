@@ -1,7 +1,7 @@
 extends Node
 
-@onready var p_1_score: Label = $P1Score
-@onready var p_2_score: Label = $P2Score
+#@onready var p_1_score: Label = $P1Score
+#@onready var p_2_score: Label = $P2Score
 
 
 signal Obtiene_Pescadito
@@ -37,3 +37,6 @@ func on_Final_Nivel():
 	print ("el nivel termino")
 	#get_tree().paused = true
 	get_tree().change_scene_to_file("res://Escenas/UI/pantalla_final.tscn")
+	
+	
+	

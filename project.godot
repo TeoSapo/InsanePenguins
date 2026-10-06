@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="INSANEPENGUINS"
-run/main_scene="res://Escenas/JUEGO/Nivel1.tscn"
+run/main_scene="uid://botwykromw2jp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Assets/Imagenes/icon.svg"
 

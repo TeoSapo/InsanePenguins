@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 200
 const JUMP_SPEED = 800.0
 const SLIP_SPEED = 500
-@onready var ESTADOS = ["IDLE","CAMINANDO","SALTANDO","PANZASO"]
+# Estados > "IDLE","CAMINANDO","SALTANDO","PANZASO","CONGELADO","NOQUEADO","DESCONGELANDO"
 @onready var estado 
 @export var nombre:String 
 @export var colorvisible:Color
@@ -11,7 +11,7 @@ const SLIP_SPEED = 500
 @onready var sonidoSFX: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
-	estado = ESTADOS[0]
+	estado = "IDLE"
 	$Label.text = nombre
 
 func _physics_process(delta: float) -> void:

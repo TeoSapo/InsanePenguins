@@ -73,7 +73,6 @@ radius = 5.0990195
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1454290041]
 sprite_frames = SubResource("SpriteFrames_7hudg")
 animation = &"Entera"
-frame_progress = 0.2077708
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=919744728]
 

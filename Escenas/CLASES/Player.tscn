@@ -192,7 +192,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_17a7g")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Descongelar",
 "speed": 5.0
 }, {
@@ -292,9 +292,8 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Descongelar"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.8984739
 
 [node name="Label" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
