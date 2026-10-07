@@ -1,4 +1,6 @@
 extends CharacterBody2D
+class_name Pinguino
+signal nieve_Reload(actual: float, maxima: float)
 
 const SPEED = 200
 const JUMP_SPEED = 800.0
