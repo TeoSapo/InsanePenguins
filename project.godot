@@ -91,6 +91,8 @@ p2SHOOT={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="plataformas"
+2d_physics/layer_3="bolas"
+2d_physics/layer_4="mundo"
 
 [physics]
 
