@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5556pn35mj08" path="res://Scripts/Player.gd" id="1_t42c4"]
 [ext_resource type="Texture2D" uid="uid://d4d8br1t6euxv" path="res://Assets/Sprites/spritesheet pinguino.png" id="2_kpjcp"]
+[ext_resource type="PackedScene" uid="uid://cx5dcwa6ulwce" path="res://Escenas/CLASES/bola_de_nieve.tscn" id="2_sl8u7"]
 [ext_resource type="Texture2D" uid="uid://bgk725v07u4r0" path="res://Assets/Sprites/pingui congelado-1.png.png" id="3_1vgip"]
 [ext_resource type="Texture2D" uid="uid://bl76hhgwkm3rh" path="res://Assets/Sprites/Idle Pinguino v2.png" id="3_5hhfp"]
 [ext_resource type="Texture2D" uid="uid://lmlnnooq7578" path="res://Assets/Sprites/Pinguino Panza v2 (2).png" id="3_kne1u"]
@@ -286,14 +287,16 @@ height = 50.0
 [node name="Pinguino" type="CharacterBody2D" unique_id=245024439]
 collision_mask = 3
 script = ExtResource("1_t42c4")
+escena_Bola = ExtResource("2_sl8u7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130779477]
 texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Idle"
+animation = &"Lanzando"
 autoplay = "Idle"
+frame = 4
 
 [node name="Nombre" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0
@@ -324,3 +327,9 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=845592127]
 stream = ExtResource("6_7avog")
+
+[node name="PuntoDeDisparo" type="Marker2D" parent="." unique_id=1372936096]
+position = Vector2(1, -9)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

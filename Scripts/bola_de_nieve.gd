@@ -7,14 +7,10 @@ const animBolaRompiendo = "BolaRompiendo"
 enum Lado {der, izq, arriba, abajo}
 
 @export_group("Trayectoria")
-@export_range(0, 89) 
-var anguloG = 45
+@export_range(0, 89) var anguloG = 45
 @export var velInicial = 700
 @export var gravedad = 900
 @export var duracion = 4
-
-@export_group("Debuff rival")
-@export var duracionCongelado = 1
 
 @export_group("Anim de romperse")
 @export var ladoAnim: Lado = Lado.der
@@ -67,7 +63,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	var pinguino = body as Pinguino
 	if pinguino:
-		pinguino.recibirDmg(duracionCongelado)
+		pinguino.recibirImpacto()
 	
 	var normal = buscarNormal()
 	var dir = direccionCardinal(-normal)
