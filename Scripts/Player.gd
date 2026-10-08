@@ -151,9 +151,9 @@ func intentar_lanzar() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if estado == "LANZANDO":
-		estado == "IDLE"
+		estado = "IDLE"
 	elif estado == "DESCONGELADO":
-		estado == "IDLE"
+		estado = "IDLE"
 
 
 func lanza_bola() -> void:
@@ -184,7 +184,7 @@ func congelar() -> void:
 	impactosRecibidos = 0
 	tiempoMov = 0
 	velocity.x = 0
-	estado == "CONGELADO"
+	estado = "CONGELADO"
 
 
 func actualizarCongelado(delta: float) -> void:
@@ -194,7 +194,7 @@ func actualizarCongelado(delta: float) -> void:
 	if intento != Vector2.ZERO:
 		tiempoMov += delta
 		if tiempoMov >= tiempoParaDescongelar:
-			estado == "DESCONGELADO"
+			estado = "DESCONGELADO"
 
 func _on_animated_sprite_2d_frame_changed() -> void:
 	if estado != "LANZANDO":

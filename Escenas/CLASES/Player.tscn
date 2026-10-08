@@ -227,7 +227,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tis3k")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"Lanzando",
 "speed": 9.0
 }, {
@@ -329,7 +329,7 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 stream = ExtResource("6_7avog")
 
 [node name="PuntoDeDisparo" type="Marker2D" parent="." unique_id=1372936096]
-position = Vector2(1, -9)
+position = Vector2(0, -7)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

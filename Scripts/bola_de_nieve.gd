@@ -63,7 +63,7 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	var pinguino = body as Pinguino
 	if pinguino:
-		pinguino.recibirImpacto()
+		pinguino.recibir_impacto()
 	
 	var normal = buscarNormal()
 	var dir = direccionCardinal(-normal)
