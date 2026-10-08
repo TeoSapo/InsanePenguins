@@ -70,6 +70,7 @@ animations = [{
 radius = 5.0
 
 [node name="bola_de_nieve" type="Area2D" unique_id=1344922806]
+z_index = 101
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_0gsqv")
@@ -77,7 +78,7 @@ anguloG = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305676988]
 sprite_frames = SubResource("SpriteFrames_7hudg")
-animation = &"Entera"
+animation = &"BolaRompiendo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582611692]
 position = Vector2(0, -1)

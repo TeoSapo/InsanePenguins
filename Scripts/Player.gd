@@ -20,8 +20,9 @@ const SLIP_SPEED = 500
 @export var nieveMax = 100
 @export var nieveInicial = 100
 @export var bolasMax = 5
-@export var cdDisparrow = 1
+@export var cooldoownDisparo = 1
 @export var frameLanz = 4
+@export var debugDisparo = false
 
 @export_group("Freezer")
 @export var bolasParaCongelar = 3
@@ -142,7 +143,7 @@ func intentar_lanzar() -> void:
 		return
 	
 	nieveActual -= costoBola
-	cdRestante = cdDisparrow
+	cdRestante = cooldoownDisparo
 	nieve_Reload.emit(nieveActual, nieveMax)
 	
 	velocity.x = 0
@@ -160,6 +161,7 @@ func lanza_bola() -> void:
 	if escena_Bola == null:
 		push_warning("Falta escena de la bola de nieve !")
 		return
+	print(self.name)
 	var bola = escena_Bola.instantiate()
 	get_parent().add_child(bola)
 	bola.global_position = puntoMarker2D.global_position

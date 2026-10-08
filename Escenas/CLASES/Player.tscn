@@ -288,6 +288,7 @@ height = 50.0
 collision_mask = 3
 script = ExtResource("1_t42c4")
 escena_Bola = ExtResource("2_sl8u7")
+bolasMax = 50
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2130779477]
 texture_filter = 1

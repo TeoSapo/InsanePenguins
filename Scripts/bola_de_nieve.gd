@@ -1,6 +1,5 @@
 extends Area2D
 
-
 const animEntera = "Entera"
 const animBolaRompiendo = "BolaRompiendo"
 
