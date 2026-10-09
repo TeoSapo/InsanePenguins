@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://depndn0c15v0e"]
+
+[ext_resource type="Texture2D" uid="uid://8qm1b356ohtt" path="res://Assets/Sprites/cumulo nieve.png" id="1_1sw2s"]
+[ext_resource type="Script" uid="uid://n7tg2vbr6lnb" path="res://Scripts/monton_nieve.gd" id="1_uhypd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhypd"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0pg7"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tntk"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vmwr"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r570a"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppj6t"]
+atlas = ExtResource("1_1sw2s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hb4fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhypd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0pg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tntk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vmwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r570a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppj6t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb4fy"]
+size = Vector2(24, 26)
+
+[node name="MontonNieve" type="Node2D" unique_id=707573585]
+script = ExtResource("1_uhypd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=901078014]
+sprite_frames = SubResource("SpriteFrames_hb4fy")
+frame = 3
+frame_progress = 0.117577605
+
+[node name="Area2D" type="Area2D" parent="." unique_id=119501955]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1791508868]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_hb4fy")

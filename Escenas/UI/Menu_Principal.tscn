@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://botwykromw2jp"]
+[gd_scene format=4 uid="uid://botwykromw2jp"]
 
 [ext_resource type="Script" uid="uid://bm3ea5ir12pf7" path="res://Scripts/menu_principal.gd" id="1_w65bj"]
 [ext_resource type="Texture2D" uid="uid://ou1y708welh1" path="res://Assets/Imagenes/copo Nieve-1.png.png" id="2_4ttmq"]
@@ -8,7 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://dkbphokdw6sy0" path="res://Assets/Musica/Musica01.ogg" id="5_6481q"]
 [ext_resource type="PackedScene" uid="uid://b4trph3m4bcs3" path="res://Escenas/UI/menu_sonido.tscn" id="7_2grvd"]
 [ext_resource type="PackedScene" uid="uid://ctagoojysy5qw" path="res://Escenas/UI/pantalla_creditos.tscn" id="8_fpbj0"]
-[ext_resource type="PackedScene" uid="uid://k35vintclail" path="res://Escenas/JUEGO/pantalla_nombres.tscn" id="9_k0wo0"]
+[ext_resource type="Texture2D" uid="uid://dhrsqru12nku6" path="res://Assets/Imagenes/Plataformas.png" id="10_qnwcb"]
+[ext_resource type="Texture2D" uid="uid://ckpgir6e2enia" path="res://Assets/Imagenes/tile 1 hielo pared-1.png.png" id="11_lxv36"]
+[ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Escenas/CLASES/Player.tscn" id="12_lxv36"]
+[ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="13_foey1"]
 
 [sub_resource type="Gradient" id="Gradient_2grvd"]
 colors = PackedColorArray(0.8078169, 0.90145904, 0.93316627, 1, 1, 1, 1, 1)
@@ -27,6 +30,53 @@ scale_max = 1.5
 color_ramp = SubResource("GradientTexture1D_0m38t")
 turbulence_enabled = true
 turbulence_noise_strength = 1.88
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_foey1"]
+texture = ExtResource("10_qnwcb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.6216927, -16, 16, -16, 16, 1.6244087, 0.30457687, 1.725934, -1.8274593, -0.5076275)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 1.5931549, -16, 1.696392)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_left_corner = 0
+1:0/0/terrains_peering_bit/top_side = 0
+1:0/0/terrains_peering_bit/top_right_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -0.89186096, -16, 0.5945759, -13.377923, 0.4459324, -8.769972, -1.4864349, -6.391674, -1.3377914, 1.7837219, -16, 1.9323654)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0/terrains_peering_bit/left_side = 0
+2:0/0/terrains_peering_bit/top_left_corner = 0
+2:0/0/terrains_peering_bit/top_side = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujx4q"]
+texture = ExtResource("11_lxv36")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/modulate = Color(1, 1, 1, 0)
+0:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_hnfju"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_1/collision_layer = 2
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Plataformas Hielo 0"
+terrain_set_0/terrain_0/color = Color(0.73009825, 0, 0.11938869, 1)
+sources/0 = SubResource("TileSetAtlasSource_foey1")
+sources/1 = SubResource("TileSetAtlasSource_ujx4q")
 
 [node name="MenuPrincipal" type="Control" unique_id=1969701678]
 layout_mode = 3
@@ -67,37 +117,45 @@ anchor_top = 0.27222222
 anchor_right = 0.6354167
 anchor_bottom = 0.47037038
 theme = ExtResource("3_ga02t")
+theme_override_font_sizes/font_size = 55
 text = "JUGAR"
-metadata/_edit_use_anchors_ = true
 
 [node name="Sonidos" type="Button" parent="." unique_id=367120733]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35833332
-anchor_top = 0.4962963
-anchor_right = 0.6354167
-anchor_bottom = 0.6962963
+anchor_left = 0.39166662
+anchor_top = 0.5185185
+anchor_right = 0.66875
+anchor_bottom = 0.7185185
+offset_left = -1.9999695
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8033322, 0.8033322)
 theme = ExtResource("3_ga02t")
 text = "MUSICA Y SFX
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="Salir" type="Button" parent="." unique_id=1460212753]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.35833332
-anchor_top = 0.72407407
-anchor_right = 0.6354167
-anchor_bottom = 0.9240741
+anchor_left = 0.80833334
+anchor_top = 0.84444445
+anchor_right = 0.99881256
+anchor_bottom = 0.98193324
+offset_right = 83.13995
+offset_bottom = 33.756042
+scale = Vector2(0.5344444, 0.5660951)
 theme = ExtResource("3_ga02t")
 text = "SALIR"
 metadata/_edit_use_anchors_ = true
 
 [node name="Creditos" type="Button" parent="." unique_id=1754071077]
-layout_mode = 0
-anchor_left = 0.027083334
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033333335
 anchor_top = 0.84444445
-anchor_right = 0.175
+anchor_right = 0.18125
 anchor_bottom = 0.9592593
 theme = ExtResource("3_ga02t")
 theme_override_font_sizes/font_size = 21
@@ -130,6 +188,48 @@ volume_db = -2.563
 autoplay = true
 bus = &"MUSICA"
 
+[node name="AyudaP1" type="Label" parent="." unique_id=1874061280]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.054166667
+anchor_top = 0.3462963
+anchor_right = 0.34895834
+anchor_bottom = 0.48518518
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08627451, 0.08627451, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("13_foey1")
+theme_override_font_sizes/font_size = 22
+text = "W S A D = Mueve jugador 
+F = Tira bola de nieve"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AyudaP2" type="Label" parent="." unique_id=2044976907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7411019
+anchor_top = 0.38631687
+anchor_right = 1.0358936
+anchor_bottom = 0.5252058
+offset_left = -80.457825
+offset_top = -20.611115
+offset_right = -80.457825
+offset_bottom = -20.611115
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08627451, 0.08627451, 0.2, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("13_foey1")
+theme_override_font_sizes/font_size = 22
+text = "↑↓ ←→ = Mueve jugador 
+L = Tira bola de nieve"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="MenuSonido" parent="." unique_id=981385999 instance=ExtResource("7_2grvd")]
 visible = false
 layout_mode = 1
@@ -138,9 +238,18 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="pantallaNombres" parent="." unique_id=1303972667 instance=ExtResource("9_k0wo0")]
-visible = false
-layout_mode = 1
+[node name="Player1" parent="." unique_id=245024439 instance=ExtResource("12_lxv36")]
+position = Vector2(108, 373)
+
+[node name="Player2" parent="." unique_id=1390093866 instance=ExtResource("12_lxv36")]
+position = Vector2(856, 372)
+indice_jugador = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2008517998]
+texture_filter = 1
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAALAAUAAAACAAAAAAAKAAUAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAAAAAUAAAAAAAAAAAAAAAQAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAAAAAQAAAAAAAAALAP//AQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_hnfju")
 
 [connection signal="pressed" from="Jugar" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Sonidos" to="." method="_on_sonidos_pressed"]

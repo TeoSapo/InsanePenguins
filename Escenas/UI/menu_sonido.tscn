@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b4trph3m4bcs3"]
 
 [ext_resource type="Texture2D" uid="uid://c5wnbm1g8pemq" path="res://Assets/Imagenes/final screen.png" id="1_iywpf"]
-[ext_resource type="Script" uid="uid://babsc8vr3ug4r" path="res://Escenas/UI/menu_sonido.gd" id="1_k2cu4"]
+[ext_resource type="Script" uid="uid://babsc8vr3ug4r" path="res://Scripts/menu_sonido.gd" id="1_k2cu4"]
 [ext_resource type="Theme" uid="uid://okwmry4nh8nf" path="res://Escenas/UI/SliderTheme.tres" id="3_o03j2"]
 [ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="4_cs82s"]
 [ext_resource type="Theme" uid="uid://cpbe1l27egq62" path="res://Escenas/UI/TextoMenuSonido.tres" id="4_o03j2"]
@@ -29,11 +29,12 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="Music" type="HSlider" parent="." unique_id=98372401]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.26979166
-anchor_top = 0.33333334
+anchor_top = 0.3148148
 anchor_right = 0.73645836
-anchor_bottom = 0.39259258
+anchor_bottom = 0.37407407
 theme = ExtResource("3_o03j2")
 max_value = 1.0
 step = 0.001
@@ -41,11 +42,12 @@ value = 1.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sfx" type="HSlider" parent="." unique_id=476969606]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.26979166
-anchor_top = 0.5555556
+anchor_top = 0.5148148
 anchor_right = 0.73645836
-anchor_bottom = 0.6148148
+anchor_bottom = 0.5740741
 theme = ExtResource("3_o03j2")
 max_value = 1.0
 step = 0.001
@@ -57,11 +59,12 @@ stream = ExtResource("4_cs82s")
 bus = &"SFX"
 
 [node name="LabelMusica" type="Label" parent="." unique_id=533013203]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.31979167
-anchor_top = 0.21481481
+anchor_top = 0.19629629
 anchor_right = 0.68645835
-anchor_bottom = 0.32962963
+anchor_bottom = 0.31111112
 theme = ExtResource("4_o03j2")
 text = "MÚSICA"
 horizontal_alignment = 1
@@ -69,21 +72,23 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="LabelSFX" type="Label" parent="." unique_id=745691642]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.44479167
-anchor_top = 0.45185184
+anchor_top = 0.41111112
 anchor_right = 0.55
-anchor_bottom = 0.56666666
+anchor_bottom = 0.52592593
 theme = ExtResource("4_o03j2")
 text = "SFX"
 metadata/_edit_use_anchors_ = true
 
 [node name="Volver" type="Button" parent="." unique_id=321094054]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.425
-anchor_top = 0.7037037
+anchor_top = 0.8537037
 anchor_right = 0.6
-anchor_bottom = 0.8074074
+anchor_bottom = 0.9574074
 theme = ExtResource("5_o2o7i")
 theme_override_font_sizes/font_size = 26
 text = "VOLVER"

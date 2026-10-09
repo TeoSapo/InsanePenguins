@@ -15,7 +15,7 @@ const TILE_SIZE:Vector2i = Vector2i(32,32)
 const TILE_SCALE:float = 2.5
 
 
-var nombres: Array[String] = ["AAA", "AAA"]
+var nombres: Array[String] = ["P01", "P02"]
 var puntos: Array[int] = [0, 0]
 var records: Array = [[], []]
 var tiles_disponibles:Array[Vector2i]
@@ -61,8 +61,8 @@ func instanciar_pescado(nivel):
 	var nuevo_pescado:Node2D = PESCADITO.instantiate()
 
 	nuevo_pescado.indice_tile_asociado = indice_pescado
-	nuevo_pescado.position.x = int(TILE_SIZE.x/2) + TILE_SIZE.x * TILE_SCALE * tiles_disponibles[indice_pescado].x
-	nuevo_pescado.position.y = int(-TILE_SIZE.y/2) + TILE_SIZE.y * TILE_SCALE * tiles_disponibles[indice_pescado].y
+	nuevo_pescado.position.x = int(TILE_SIZE.x/2.0) + TILE_SIZE.x * TILE_SCALE * tiles_disponibles[indice_pescado].x
+	nuevo_pescado.position.y = int(-TILE_SIZE.y/2.0) + TILE_SIZE.y * TILE_SCALE * tiles_disponibles[indice_pescado].y
 	nivel.add_child(nuevo_pescado)
 
 

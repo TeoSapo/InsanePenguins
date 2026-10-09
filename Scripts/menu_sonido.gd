@@ -1,4 +1,10 @@
 extends Control
+@onready var music: HSlider = $Music
+@onready var sfx: HSlider = $Sfx
+
+func _ready():
+	music.value=AudioServer.get_bus_volume_db(AudioServer.get_bus_index("MUSICA"))
+	sfx.value=AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX"))
 
 
 func _on_music_value_changed(value: float) -> void:

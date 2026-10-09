@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ctagoojysy5qw"]
 
-[ext_resource type="Script" uid="uid://df7hbb6cyl23j" path="res://Escenas/UI/pantalla_creditos.gd" id="1_7saej"]
+[ext_resource type="Script" uid="uid://df7hbb6cyl23j" path="res://Scripts/pantalla_creditos.gd" id="1_7saej"]
 [ext_resource type="Texture2D" uid="uid://c5wnbm1g8pemq" path="res://Assets/Imagenes/final screen.png" id="1_tctme"]
 [ext_resource type="Theme" uid="uid://cpbe1l27egq62" path="res://Escenas/UI/TextoMenuSonido.tres" id="2_7saej"]
 [ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="3_lbq5r"]
@@ -27,27 +27,36 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="NombresCreditos" type="Label" parent="." unique_id=1602517305]
-layout_mode = 0
-anchor_left = 0.20833333
-anchor_top = 0.19814815
-anchor_right = 0.7583333
-anchor_bottom = 0.67407405
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -205.0
+offset_right = 260.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("2_7saej")
 theme_override_font_sizes/font_size = 37
-text = "Integrantes:
-EDGARDO SÁNCHEZ
-TEO SAPOZNIK
-JAZMIN CAAMAÑO"
+text = "CSS TEAM
+
+CAAMAÑO JAZMIN 
+SÁNCHEZ EDGARDO
+SAPOZNIK TEO
+"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="VOLVER" type="Button" parent="." unique_id=1392886740]
-layout_mode = 0
-anchor_left = 0.41666666
-anchor_top = 0.6574074
-anchor_right = 0.55833334
-anchor_bottom = 0.76666665
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42083332
+anchor_top = 0.8425926
+anchor_right = 0.5625
+anchor_bottom = 0.95185184
 theme = ExtResource("3_lbq5r")
 theme_override_font_sizes/font_size = 23
 text = "VOLVER"

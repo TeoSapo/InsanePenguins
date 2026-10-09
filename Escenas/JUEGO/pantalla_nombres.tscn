@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c5wnbm1g8pemq" path="res://Assets/Imagenes/final screen.png" id="2_m2jwc"]
 [ext_resource type="FontFile" uid="uid://01pkremc2qev" path="res://Assets/Fuentes/Yellow Banana.otf" id="3_2surd"]
 [ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="5_2surd"]
+[ext_resource type="Texture2D" uid="uid://bnpwtprcbi1ap" path="res://Assets/Sprites/Pinguino salto.png" id="6_8p814"]
 
 [node name="pantallaNombres" type="Control" unique_id=1303972667]
 layout_mode = 3
@@ -126,9 +127,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Ayuda2" type="Label" parent="." unique_id=1744198613]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.47916666
+anchor_left = 0.665625
 anchor_top = 0.78518516
-anchor_right = 0.92604166
+anchor_right = 0.9125
 anchor_bottom = 0.92407405
 grow_horizontal = 2
 grow_vertical = 0
@@ -146,9 +147,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Ayuda3" type="Label" parent="." unique_id=1595740930]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.088541664
+anchor_left = 0.09375
 anchor_top = 0.78518516
-anchor_right = 0.53541666
+anchor_right = 0.31875
 anchor_bottom = 0.92407405
 grow_horizontal = 2
 grow_vertical = 0
@@ -161,3 +162,14 @@ text = "W/S = Cambiar Letra
 F = Confirmar letra"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="P1" type="Sprite2D" parent="." unique_id=508655614]
+position = Vector2(191, 379)
+scale = Vector2(3, 3)
+texture = ExtResource("6_8p814")
+
+[node name="P2" type="Sprite2D" parent="." unique_id=61191635]
+position = Vector2(764, 379)
+scale = Vector2(3, 3)
+texture = ExtResource("6_8p814")
+flip_h = true

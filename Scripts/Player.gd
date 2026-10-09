@@ -146,7 +146,7 @@ func SFX(sonido:String):
 		"NOQUEADO":
 			sonidoSFX.stream = GOLPE
 			sonidoSFX.pitch_scale = 1
-			sonidoSFX.volume_db = 0
+			sonidoSFX.volume_db = -5
 		"SALTANDO":
 			sonidoSFX.stream = SALTO
 			sonidoSFX.pitch_scale = randf_range(1,1.3)
