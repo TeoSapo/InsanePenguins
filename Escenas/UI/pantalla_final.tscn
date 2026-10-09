@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="5_us2dy"]
 [ext_resource type="FontFile" uid="uid://01pkremc2qev" path="res://Assets/Fuentes/Yellow Banana.otf" id="8_qoqeu"]
 [ext_resource type="PackedScene" uid="uid://c75g2enk86h68" path="res://Escenas/CLASES/copo_nieve.tscn" id="9_qoqeu"]
+[ext_resource type="Texture2D" uid="uid://bnpwtprcbi1ap" path="res://Assets/Sprites/Pinguino salto.png" id="11_qikyi"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hb4fy"]
 particle_flag_disable_z = true
@@ -62,9 +63,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21666667
-anchor_top = 0.23703703
+anchor_top = 0.062962964
 anchor_right = 0.78333336
-anchor_bottom = 0.37777784
+anchor_bottom = 0.20370376
 offset_bottom = -3.0517578e-05
 theme_override_colors/default_color = Color(0.10178528, 0.18779737, 0.34259823, 1)
 theme_override_fonts/normal_font = ExtResource("2_qkkwa")
@@ -75,7 +76,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ConfettiGanador1" type="GPUParticles2D" parent="." unique_id=1622473951]
-position = Vector2(355, 249)
+position = Vector2(355, 268)
 emitting = false
 amount = 80
 texture = ExtResource("4_cmblm")
@@ -86,7 +87,7 @@ explosiveness = 0.2
 process_material = SubResource("ParticleProcessMaterial_hb4fy")
 
 [node name="ConfettiGanador2" type="GPUParticles2D" parent="." unique_id=384034856]
-position = Vector2(605, 249)
+position = Vector2(605, 268)
 emitting = false
 amount = 80
 texture = ExtResource("4_cmblm")
@@ -100,9 +101,9 @@ process_material = SubResource("ParticleProcessMaterial_cmblm")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24166666
-anchor_top = 0.4148148
+anchor_top = 0.44999996
 anchor_right = 0.49166667
-anchor_bottom = 0.65185183
+anchor_bottom = 0.68703705
 texture = ExtResource("3_4nlii")
 metadata/_edit_use_anchors_ = true
 
@@ -110,9 +111,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5083333
-anchor_top = 0.4148148
+anchor_top = 0.44999996
 anchor_right = 0.7583333
-anchor_bottom = 0.65185183
+anchor_bottom = 0.68703705
 texture = ExtResource("3_4nlii")
 metadata/_edit_use_anchors_ = true
 
@@ -120,9 +121,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24166666
-anchor_top = 0.4
+anchor_top = 0.4351852
 anchor_right = 0.49166667
-anchor_bottom = 0.53333336
+anchor_bottom = 0.5685185
 texture = ExtResource("4_frb8w")
 metadata/_edit_use_anchors_ = true
 
@@ -130,9 +131,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5083333
-anchor_top = 0.4
+anchor_top = 0.4351852
 anchor_right = 0.7583333
-anchor_bottom = 0.53333336
+anchor_bottom = 0.5685185
 texture = ExtResource("4_frb8w")
 metadata/_edit_use_anchors_ = true
 
@@ -140,9 +141,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25416666
-anchor_top = 0.4148148
+anchor_top = 0.44999996
 anchor_right = 0.48229167
-anchor_bottom = 0.50185186
+anchor_bottom = 0.537037
 offset_left = 1.5258789e-05
 theme_override_colors/font_color = Color(0.29061437, 0.43304953, 0.6404014, 1)
 theme_override_fonts/font = ExtResource("2_qkkwa")
@@ -156,9 +157,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51666665
-anchor_top = 0.4148148
+anchor_top = 0.44999996
 anchor_right = 0.753125
-anchor_bottom = 0.50185186
+anchor_bottom = 0.537037
 offset_left = 3.0517578e-05
 theme_override_colors/font_color = Color(0.2901961, 0.43137255, 0.6392157, 1)
 theme_override_fonts/font = ExtResource("2_qkkwa")
@@ -172,9 +173,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.27083334
-anchor_top = 0.5407407
+anchor_top = 0.57592595
 anchor_right = 0.4625
-anchor_bottom = 0.6148148
+anchor_bottom = 0.65
 theme = ExtResource("5_frb8w")
 theme_override_colors/default_color = Color(0.99044496, 0.6966843, 0.33824247, 1)
 theme_override_colors/font_outline_color = Color(0.23893332, 0.16936609, 0.06792779, 1)
@@ -190,9 +191,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5385417
-anchor_top = 0.5407407
+anchor_top = 0.57592595
 anchor_right = 0.73020834
-anchor_bottom = 0.6148148
+anchor_bottom = 0.65
 theme = ExtResource("5_frb8w")
 theme_override_colors/default_color = Color(0.99044496, 0.6966843, 0.33824247, 1)
 theme_override_colors/font_outline_color = Color(0.23893332, 0.16936609, 0.06792779, 1)
@@ -207,9 +208,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Ganador" type="Label" parent="." unique_id=1388215501]
 layout_mode = 0
 offset_left = 296.0
-offset_top = 376.0
+offset_top = 395.0
 offset_right = 672.0
-offset_bottom = 440.0
+offset_bottom = 459.0
 theme_override_colors/font_color = Color(0.99215686, 0.7176471, 0.38431373, 1)
 theme_override_colors/font_outline_color = Color(0.23921569, 0.16862746, 0.06666667, 1)
 theme_override_constants/outline_size = 9
@@ -226,5 +227,10 @@ wait_time = 0.5
 autostart = true
 
 [node name="CopoNieve" parent="Node2D" unique_id=986956577 instance=ExtResource("9_qoqeu")]
+
+[node name="PinguinoSalto" type="Sprite2D" parent="." unique_id=2083687525]
+position = Vector2(350, 172.00002)
+scale = Vector2(3.7528358, 3.7528358)
+texture = ExtResource("11_qikyi")
 
 [connection signal="timeout" from="Node2D/Timer" to="." method="_on_timer_timeout"]

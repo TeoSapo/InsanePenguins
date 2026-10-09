@@ -1,6 +1,6 @@
 extends Control
 #Lo comente por que me tiraba error
-#const COPO_NIEVE = preload("res://Escenas/UI/copo_nieve.tscn")
+const COPO_NIEVE = preload("res://Escenas/CLASES/copo_nieve.tscn")
 @onready var confetti_ganador_1: GPUParticles2D = $ConfettiGanador1
 @onready var confetti_ganador_2: GPUParticles2D = $ConfettiGanador2
 
@@ -36,8 +36,8 @@ func _ganador() -> void:
 		#confetti_ganador_1.emitting = true
 		#confetti_ganador_2.emitting = true
 
-#Lo mismo con esto, lo comente por que me tiraba error.
-#func _on_timer_timeout() -> void:
-	#var copoInstancia = COPO_NIEVE.instantiate()
-	#copoInstancia.position = Vector2(randi_range(get_viewport_rect().size.x, 0), -10 )
-	#add_child(copoInstancia)
+
+func _on_timer_timeout() -> void:
+	var copoInstancia = COPO_NIEVE.instantiate()
+	copoInstancia.position = Vector2(randi_range(get_viewport_rect().size.x, 0), -10 )
+	add_child(copoInstancia)
