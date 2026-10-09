@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dr3ifshg0yeq8"]
 
 [ext_resource type="Script" uid="uid://d1vmhbsvdk3mo" path="res://Scripts/selector.gd" id="1_vy1wu"]
+[ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="2_ku3o5"]
 
 [node name="Selector" type="HBoxContainer" unique_id=920122249]
 anchors_preset = 15
@@ -16,6 +17,10 @@ script = ExtResource("1_vy1wu")
 
 [node name="Letra1" type="Label" parent="." unique_id=2122392057]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08591119, 0.08591119, 0.19843741, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("2_ku3o5")
 theme_override_font_sizes/font_size = 80
 text = "A"
 horizontal_alignment = 1
@@ -23,6 +28,10 @@ vertical_alignment = 1
 
 [node name="Letra2" type="Label" parent="." unique_id=1903594575]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08591119, 0.08591119, 0.19843741, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("2_ku3o5")
 theme_override_font_sizes/font_size = 80
 text = "A"
 horizontal_alignment = 1
@@ -30,6 +39,10 @@ vertical_alignment = 1
 
 [node name="Letra3" type="Label" parent="." unique_id=504874899]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.08591119, 0.08591119, 0.19843741, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("2_ku3o5")
 theme_override_font_sizes/font_size = 80
 text = "A"
 horizontal_alignment = 1

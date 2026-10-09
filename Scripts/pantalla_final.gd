@@ -41,3 +41,7 @@ func _on_timer_timeout() -> void:
 	var copoInstancia = COPO_NIEVE.instantiate()
 	copoInstancia.position = Vector2(randi_range(get_viewport_rect().size.x, 0), -10 )
 	add_child(copoInstancia)
+
+
+func _on_volver_pressed() -> void:
+	get_tree().change_scene_to_file("res://Escenas/UI/Menu_Principal.tscn")

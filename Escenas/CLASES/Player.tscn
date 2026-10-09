@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://w65wuapnvkpk" path="res://Assets/Sprites/pingui descongelando.png" id="4_sl8u7"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 [ext_resource type="AudioStream" uid="uid://btn5wcgbw8nvb" path="res://Assets/SFX/PinguinoGraznando.ogg" id="6_7avog"]
+[ext_resource type="Texture2D" uid="uid://dbd2osfnumbvl" path="res://Assets/Sprites/pingui llorando v2.png" id="7_ibbfr"]
 [ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="8_tfgta"]
+[ext_resource type="Texture2D" uid="uid://dcqrvavk2udav" path="res://Assets/Sprites/Pinguino Copa v2.png" id="10_ibbfr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
 atlas = ExtResource("2_kpjcp")
@@ -73,29 +75,57 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("3_5hhfp")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vgip"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnuic"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sl8u7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s7gf"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibbfr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tis3k"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnuic"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8x024"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5s7gf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qb4"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(0, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tis3k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajax5"]
 atlas = ExtResource("4_b7pb7")
 region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2vge"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3vte"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmf85"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1c3w"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17nxm"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odpcg"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx5si"]
+atlas = ExtResource("7_ibbfr")
+region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7pb7"]
 atlas = ExtResource("4_7avog")
@@ -128,6 +158,14 @@ region = Rect2(0, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtqjt"]
 atlas = ExtResource("3_kne1u")
 region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6bqg"]
+atlas = ExtResource("10_ibbfr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smr11"]
+atlas = ExtResource("10_ibbfr")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mok4h"]
 atlas = ExtResource("5_kwdw2")
@@ -210,15 +248,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1vgip")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sl8u7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibbfr")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_lnuic")
 }, {
 "duration": 1.0,
@@ -226,10 +255,45 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tis3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8x024")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0qb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajax5")
 }],
 "loop": 0,
 "name": &"Lanzando",
-"speed": 9.0
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2vge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3vte")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmf85")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1c3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17nxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odpcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx5si")
+}],
+"loop": 1,
+"name": &"Llorando",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -267,6 +331,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_d6bqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smr11")
+}],
+"loop": 1,
+"name": &"PinguinoCopa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_mok4h")
 }, {
 "duration": 1.0,
@@ -295,9 +370,9 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Lanzando"
+animation = &"PinguinoCopa"
 autoplay = "Idle"
-frame = 4
+frame_progress = 0.69699776
 
 [node name="Nombre" type="Label" parent="." unique_id=1524383921]
 offset_left = -60.0

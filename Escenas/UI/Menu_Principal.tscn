@@ -1,6 +1,29 @@
 [gd_scene format=3 uid="uid://botwykromw2jp"]
 
 [ext_resource type="Script" uid="uid://bm3ea5ir12pf7" path="res://Scripts/menu_principal.gd" id="1_w65bj"]
+[ext_resource type="Texture2D" uid="uid://ou1y708welh1" path="res://Assets/Imagenes/copo Nieve-1.png.png" id="2_4ttmq"]
+[ext_resource type="Texture2D" uid="uid://c5wnbm1g8pemq" path="res://Assets/Imagenes/final screen.png" id="2_6481q"]
+[ext_resource type="FontFile" uid="uid://cwccxygo2jloj" path="res://Assets/Fuentes/Ice Cold Personal Use.otf" id="3_4ttmq"]
+[ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="3_ga02t"]
+[ext_resource type="AudioStream" uid="uid://dkbphokdw6sy0" path="res://Assets/Musica/Musica01.ogg" id="5_6481q"]
+
+[sub_resource type="Gradient" id="Gradient_2grvd"]
+colors = PackedColorArray(0.8078169, 0.90145904, 0.93316627, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0m38t"]
+gradient = SubResource("Gradient_2grvd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fpbj0"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0.35, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 0.79999995
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_0m38t")
+turbulence_enabled = true
+turbulence_noise_strength = 1.88
 
 [node name="MenuPrincipal" type="Control" unique_id=1969701678]
 layout_mode = 3
@@ -11,37 +34,96 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w65bj")
 
+[node name="Fondo" type="TextureRect" parent="." unique_id=761098943]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.14814815
+anchor_right = 1.0010417
+anchor_bottom = 1.0
+texture = ExtResource("2_6481q")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=1208059090]
+position = Vector2(488.00003, -64)
+scale = Vector2(15.688527, 20.920004)
+amount = 94
+texture = ExtResource("2_4ttmq")
+lifetime = 23.0
+preprocess = 50.0
+speed_scale = 2.5
+use_fixed_seed = true
+seed = 3300505189
+process_material = SubResource("ParticleProcessMaterial_fpbj0")
+
 [node name="Jugar" type="Button" parent="." unique_id=712894319]
-layout_mode = 0
-offset_left = 332.0
-offset_top = 69.0
-offset_right = 598.0
-offset_bottom = 176.0
-text = "Jugar"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35833332
+anchor_top = 0.27222222
+anchor_right = 0.6354167
+anchor_bottom = 0.47037038
+theme = ExtResource("3_ga02t")
+text = "JUGAR"
+metadata/_edit_use_anchors_ = true
 
 [node name="Sonidos" type="Button" parent="." unique_id=367120733]
-layout_mode = 0
-offset_left = 358.0
-offset_top = 227.0
-offset_right = 577.0
-offset_bottom = 309.0
-text = "Música y Sonido
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35833332
+anchor_top = 0.4962963
+anchor_right = 0.6354167
+anchor_bottom = 0.6962963
+theme = ExtResource("3_ga02t")
+text = "MUSICA Y SFX
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Salir" type="Button" parent="." unique_id=1460212753]
-layout_mode = 0
-offset_left = 359.0
-offset_top = 356.0
-offset_right = 578.0
-offset_bottom = 438.0
-text = "Salir"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35833332
+anchor_top = 0.72407407
+anchor_right = 0.6354167
+anchor_bottom = 0.9240741
+theme = ExtResource("3_ga02t")
+text = "SALIR"
+metadata/_edit_use_anchors_ = true
 
 [node name="Creditos" type="Button" parent="." unique_id=1754071077]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 465.0
-offset_right = 184.0
-offset_bottom = 515.0
-text = "Creditos"
+anchor_left = 0.027083334
+anchor_top = 0.84444445
+anchor_right = 0.175
+anchor_bottom = 0.9592593
+theme = ExtResource("3_ga02t")
+theme_override_font_sizes/font_size = 21
+text = "CREDITOS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Título" type="Label" parent="." unique_id=2002246146]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20833333
+anchor_top = 0.07962963
+anchor_right = 0.8072917
+anchor_bottom = 0.24259259
+theme_override_colors/font_shadow_color = Color(0, 0.13971955, 0.3409466, 1)
+theme_override_colors/font_outline_color = Color(0.18441826, 0.450701, 0.7775582, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 20
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/font = ExtResource("3_4ttmq")
+theme_override_font_sizes/font_size = 69
+text = "INSANE PENGUINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1981357876]
+stream = ExtResource("5_6481q")
+volume_db = -2.563
+autoplay = true
 
 [connection signal="pressed" from="Jugar" to="." method="_on_button_pressed"]
