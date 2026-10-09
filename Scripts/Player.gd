@@ -143,6 +143,12 @@ func ruido_comiendo(_nada):
 	sonidoSFX.volume_db = -8.5
 	sonidoSFX.play()
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if indice_jugador != body.indice_jugador:
+		body.estado = "NOQUEADO"
+		await get_tree().create_timer(2.0).timeout
+		body.estado = "IDLE"
+	pass # Replace with function body.
 
 #endregion
 
@@ -224,11 +230,3 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		lanza_bola()
 
 #endregion
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if indice_jugador != body.indice_jugador:
-		body.estado = "NOQUEADO"
-		await get_tree().create_timer(2.0).timeout
-		body.estado = "IDLE"
-	pass # Replace with function body.
