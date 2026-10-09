@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ctagoojysy5qw"]
+
+[ext_resource type="Script" uid="uid://df7hbb6cyl23j" path="res://Escenas/UI/pantalla_creditos.gd" id="1_7saej"]
+[ext_resource type="Texture2D" uid="uid://c5wnbm1g8pemq" path="res://Assets/Imagenes/final screen.png" id="1_tctme"]
+[ext_resource type="Theme" uid="uid://cpbe1l27egq62" path="res://Escenas/UI/TextoMenuSonido.tres" id="2_7saej"]
+[ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="3_lbq5r"]
+
+[node name="PantallaCreditos" type="Control" unique_id=1428880632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7saej")
+metadata/_edit_lock_ = true
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1512994574]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.14814815
+anchor_right = 1.0010417
+anchor_bottom = 1.0
+texture = ExtResource("1_tctme")
+expand_mode = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="NombresCreditos" type="Label" parent="." unique_id=1602517305]
+layout_mode = 0
+anchor_left = 0.20833333
+anchor_top = 0.19814815
+anchor_right = 0.7583333
+anchor_bottom = 0.67407405
+theme = ExtResource("2_7saej")
+theme_override_font_sizes/font_size = 37
+text = "Integrantes:
+EDGARDO SÁNCHEZ
+TEO SAPOZNIK
+JAZMIN CAAMAÑO"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VOLVER" type="Button" parent="." unique_id=1392886740]
+layout_mode = 0
+anchor_left = 0.41666666
+anchor_top = 0.6574074
+anchor_right = 0.55833334
+anchor_bottom = 0.76666665
+theme = ExtResource("3_lbq5r")
+theme_override_font_sizes/font_size = 23
+text = "VOLVER"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VOLVER" to="." method="_on_volver_pressed"]

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dxphgxfe805x6"]
+
+[sub_resource type="GDScript" id="GDScript_tqwh3"]
+script/source = "extends CanvasLayer
+@onready var color_rect: ColorRect = $ColorRect
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+signal on_transicion_finished
+func _ready() -> void:
+	color_rect.visible = false
+	animation_player.animation_finished.connect(_on_animation_finished)
+	
+func _on_animation_finished(anim_name):
+	if anim_name == \"FadeOut\":
+		on_transicion_finished.emit()
+		animation_player.play(\"FadeIn\")
+	elif anim_name == \"FadeIn\":
+		color_rect.visible = false
+func _transicion():
+	color_rect.visible = true
+	animation_player.play(\"FadeOut\")
+"
+
+[sub_resource type="Animation" id="Animation_ab03j"]
+resource_name = "FadeIn"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_27vy7"]
+resource_name = "FadeOut"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bptwx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca6is"]
+_data = {
+&"FadeIn": SubResource("Animation_ab03j"),
+&"FadeOut": SubResource("Animation_27vy7"),
+&"RESET": SubResource("Animation_bptwx")
+}
+
+[node name="PantallaTransicion" type="CanvasLayer" unique_id=395550031]
+script = SubResource("GDScript_tqwh3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2008930527]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1141744222]
+libraries/ = SubResource("AnimationLibrary_ca6is")

@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://okwmry4nh8nf"]
+
+[ext_resource type="Texture2D" uid="uid://d2qhdgjohspld" path="res://Assets/Imagenes/Bola Grabber.png" id="1_ste2o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obr11"]
+bg_color = Color(0.063737735, 0.22354898, 0.45476133, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi50f"]
+bg_color = Color(0.0627451, 0.22352941, 0.45490196, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ayh0b"]
+color = Color(0.25871187, 0.5155151, 0.899341, 1)
+grow_begin = -26.0
+grow_end = -14.0
+thickness = 20
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_ste2o")
+HSlider/icons/grabber_disabled = ExtResource("1_ste2o")
+HSlider/icons/grabber_highlight = ExtResource("1_ste2o")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_obr11")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_vi50f")
+HSlider/styles/slider = SubResource("StyleBoxLine_ayh0b")

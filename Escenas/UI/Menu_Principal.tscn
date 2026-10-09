@@ -6,6 +6,9 @@
 [ext_resource type="FontFile" uid="uid://cwccxygo2jloj" path="res://Assets/Fuentes/Ice Cold Personal Use.otf" id="3_4ttmq"]
 [ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="3_ga02t"]
 [ext_resource type="AudioStream" uid="uid://dkbphokdw6sy0" path="res://Assets/Musica/Musica01.ogg" id="5_6481q"]
+[ext_resource type="PackedScene" uid="uid://b4trph3m4bcs3" path="res://Escenas/UI/menu_sonido.tscn" id="7_2grvd"]
+[ext_resource type="PackedScene" uid="uid://ctagoojysy5qw" path="res://Escenas/UI/pantalla_creditos.tscn" id="8_fpbj0"]
+[ext_resource type="PackedScene" uid="uid://k35vintclail" path="res://Escenas/JUEGO/pantalla_nombres.tscn" id="9_k0wo0"]
 
 [sub_resource type="Gradient" id="Gradient_2grvd"]
 colors = PackedColorArray(0.8078169, 0.90145904, 0.93316627, 1, 1, 1, 1, 1)
@@ -125,5 +128,21 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("5_6481q")
 volume_db = -2.563
 autoplay = true
+bus = &"MUSICA"
+
+[node name="MenuSonido" parent="." unique_id=981385999 instance=ExtResource("7_2grvd")]
+visible = false
+layout_mode = 1
+
+[node name="PantallaCreditos" parent="." unique_id=1428880632 instance=ExtResource("8_fpbj0")]
+visible = false
+layout_mode = 1
+
+[node name="pantallaNombres" parent="." unique_id=1303972667 instance=ExtResource("9_k0wo0")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sonidos" to="." method="_on_sonidos_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]

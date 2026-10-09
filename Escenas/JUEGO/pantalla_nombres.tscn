@@ -14,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dkrkm")
+metadata/_edit_lock_ = true
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1049506725]
 layout_mode = 1
@@ -24,6 +25,7 @@ anchor_bottom = 1.0
 texture = ExtResource("2_m2jwc")
 expand_mode = 2
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Titulo" type="Label" parent="." unique_id=836986272]
 layout_mode = 1
@@ -64,11 +66,16 @@ metadata/_edit_use_anchors_ = true
 [node name="SelectorJ1" parent="." unique_id=920122249 instance=ExtResource("1_c6h8y")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 30.0
-offset_top = 52.0
-offset_right = -574.0
-offset_bottom = 52.0
+anchors_preset = -1
+anchor_left = 0.03125
+anchor_top = 0.096296296
+anchor_right = 0.36314583
+anchor_bottom = 0.9912963
+offset_left = 0.0
+offset_right = 37.380005
+offset_bottom = 56.700012
 scale = Vector2(0.895, 0.895)
+metadata/_edit_use_anchors_ = true
 
 [node name="nombreP2" type="Label" parent="." unique_id=2045980760]
 layout_mode = 1
@@ -92,39 +99,37 @@ metadata/_edit_use_anchors_ = true
 [node name="SelectorJ2" parent="." unique_id=2097014146 instance=ExtResource("1_c6h8y")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 603.0
-offset_top = 54.0
-offset_right = -1.0
-offset_bottom = 54.0
+anchors_preset = -1
+anchor_left = 0.628125
+anchor_top = 0.1
+anchor_right = 0.96002084
+anchor_bottom = 0.995
+offset_left = 0.0
+offset_right = 37.380005
+offset_bottom = 56.700012
 scale = Vector2(0.895, 0.895)
+metadata/_edit_use_anchors_ = true
 
 [node name="Ayuda" type="Label" parent="." unique_id=1716198764]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -395.0
-offset_top = -116.0
-offset_right = 34.0
-offset_bottom = -41.0
+anchors_preset = -1
+anchor_left = 0.088541664
+anchor_top = 0.78518516
+anchor_right = 0.53541666
+anchor_bottom = 0.92407405
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ayuda2" type="Label" parent="." unique_id=1744198613]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -116.0
-offset_right = 409.0
-offset_bottom = -41.0
+anchors_preset = -1
+anchor_left = 0.47916666
+anchor_top = 0.78518516
+anchor_right = 0.92604166
+anchor_bottom = 0.92407405
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
@@ -136,18 +141,15 @@ text = "↑/↓ = Cambiar Letra
 L = Confirmar letra"
 horizontal_alignment = 2
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ayuda3" type="Label" parent="." unique_id=1595740930]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -395.0
-offset_top = -116.0
-offset_right = 34.0
-offset_bottom = -41.0
+anchors_preset = -1
+anchor_left = 0.088541664
+anchor_top = 0.78518516
+anchor_right = 0.53541666
+anchor_bottom = 0.92407405
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.8666667, 1, 1, 1)
@@ -158,3 +160,4 @@ theme_override_font_sizes/font_size = 22
 text = "W/S = Cambiar Letra 
 F = Confirmar letra"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

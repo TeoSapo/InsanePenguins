@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcqrvavk2udav"
-path="res://.godot/imported/Pinguino Copa v2.png-d8179fbaf2daba7149a90c0603810555.ctex"
+uid="uid://ny03hyqrjhe4"
+path="res://.godot/imported/Pinguino Copa v3.png-77a00113c02713d8c47f6260094c69fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Pinguino Copa v2.png"
-dest_files=["res://.godot/imported/Pinguino Copa v2.png-d8179fbaf2daba7149a90c0603810555.ctex"]
+source_file="res://Assets/Sprites/Pinguino Copa v3.png"
+dest_files=["res://.godot/imported/Pinguino Copa v3.png-77a00113c02713d8c47f6260094c69fd.ctex"]
 
 [params]
 

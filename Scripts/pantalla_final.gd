@@ -18,13 +18,17 @@ func _ganador() -> void:
 		0:
 			confetti_ganador_1.emitting = true
 			$Ganador.text = "GANÓ " + InsanePenguins.nombres[0] + "!"
+			$PinguiAnimP1.play("Copa")
 		1:
 			confetti_ganador_2.emitting = true
 			$Ganador.text = "GANÓ " + InsanePenguins.nombres[1] + "!"
+			$PinguiAnimP2.play("Copa")
 		_:
 			$Ganador.text = "ES UN EMPATE!"
 			confetti_ganador_1.emitting = true
 			confetti_ganador_2.emitting = true
+			$PinguiAnimP1.play("Mareado")
+			$PinguiAnimP2.play("Mareado")
 
 
 func _on_timer_timeout() -> void:

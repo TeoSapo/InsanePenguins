@@ -67,6 +67,7 @@ offset_top = 489.0
 offset_right = 37.000004
 offset_bottom = 489.0
 scale = Vector2(3.480001, 26.36)
+metadata/_edit_use_anchors_ = true
 
 [node name="P2Score" type="Label" parent="." unique_id=1494590940]
 offset_left = 485.0
@@ -75,6 +76,7 @@ offset_right = 558.0
 offset_bottom = 30.0
 theme = ExtResource("6_mi374")
 text = "PUNTAJE"
+metadata/_edit_use_anchors_ = true
 
 [node name="P1Score" type="Label" parent="." unique_id=1359402447]
 offset_left = 31.0
@@ -83,6 +85,7 @@ offset_right = 104.0
 offset_bottom = 31.0
 theme = ExtResource("6_mi374")
 text = "PUNTAJE"
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=531453782]
 stream = ExtResource("7_h4rms")

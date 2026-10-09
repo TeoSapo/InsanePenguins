@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://btepw1b7jo2rp"
+path="res://.godot/imported/Hover Boton UI.ogg-b335b15d35e4961562c6273e741560b7.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/Hover Boton UI.ogg"
+dest_files=["res://.godot/imported/Hover Boton UI.ogg-b335b15d35e4961562c6273e741560b7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

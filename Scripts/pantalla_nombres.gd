@@ -12,7 +12,6 @@ var listos = [false, false]
 func _ready() -> void:
 	for j in 2:
 		actualizar(j)
-
 func _unhandled_input(event: InputEvent) -> void:
 	for j in 2:
 		if not listos[j] and procesar_jugadores(j, event):

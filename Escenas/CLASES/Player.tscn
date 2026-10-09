@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://w65wuapnvkpk" path="res://Assets/Sprites/pingui descongelando.png" id="4_sl8u7"]
 [ext_resource type="Texture2D" uid="uid://jvctl6yaygt1" path="res://Assets/Sprites/Salto pinguino v2.png" id="5_kwdw2"]
 [ext_resource type="Texture2D" uid="uid://dbd2osfnumbvl" path="res://Assets/Sprites/pingui llorando v2.png" id="7_ibbfr"]
-[ext_resource type="Theme" uid="uid://bwf0firbjcjho" path="res://Escenas/UI/puntajeNivelTheme.tres" id="8_tfgta"]
-[ext_resource type="Texture2D" uid="uid://dcqrvavk2udav" path="res://Assets/Sprites/Pinguino Copa v2.png" id="10_ibbfr"]
+[ext_resource type="Texture2D" uid="uid://ny03hyqrjhe4" path="res://Assets/Sprites/Pinguino Copa v3.png" id="11_lnuic"]
+[ext_resource type="Theme" uid="uid://cpbe1l27egq62" path="res://Escenas/UI/TextoMenuSonido.tres" id="13_lnuic"]
 [ext_resource type="AudioStream" uid="uid://cmdbvs2ooklbh" path="res://Assets/SFX/comepescado.ogg" id="14_lnuic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hs68"]
@@ -160,11 +160,11 @@ atlas = ExtResource("3_kne1u")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d6bqg"]
-atlas = ExtResource("10_ibbfr")
+atlas = ExtResource("11_lnuic")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smr11"]
-atlas = ExtResource("10_ibbfr")
+atlas = ExtResource("11_lnuic")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mok4h"]
@@ -373,7 +373,7 @@ texture_filter = 1
 position = Vector2(0, -1)
 scale = Vector2(1.78, 1.78)
 sprite_frames = SubResource("SpriteFrames_kne1u")
-animation = &"Panzaso"
+animation = &"PinguinoCopa"
 autoplay = "Idle"
 
 [node name="Nombre" type="Label" parent="." unique_id=1524383921]
@@ -382,7 +382,7 @@ offset_top = -48.0
 offset_right = 60.0
 offset_bottom = -24.0
 pivot_offset = Vector2(60, 12)
-theme = ExtResource("8_tfgta")
+theme = ExtResource("13_lnuic")
 theme_override_font_sizes/font_size = 14
 text = "NOMBRE"
 horizontal_alignment = 1
@@ -405,6 +405,7 @@ debug_color = Color(0.9647059, 0.02745098, 0, 0.41960785)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=845592127]
 stream = ExtResource("14_lnuic")
 max_polyphony = 3
+bus = &"SFX"
 
 [node name="PuntoDeDisparo" type="Marker2D" parent="." unique_id=1372936096]
 position = Vector2(0, -7)

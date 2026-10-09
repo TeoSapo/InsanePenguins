@@ -1,0 +1,53 @@
+[gd_resource type="Theme" format=3 uid="uid://cpbe1l27egq62"]
+
+[ext_resource type="FontFile" uid="uid://01pkremc2qev" path="res://Assets/Fuentes/Yellow Banana.otf" id="1_lxe4t"]
+
+[sub_resource type="FontFile" id="FontFile_tetyq"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_rcewf"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[resource]
+default_base_scale = 3.6
+default_font = SubResource("FontFile_rcewf")
+Label/colors/font_color = Color(0.63472986, 0.86152416, 0.9959375, 1)
+Label/colors/font_outline_color = Color(0.089899994, 0.11324502, 0.29, 1)
+Label/constants/outline_size = 12
+Label/font_sizes/font_size = 51
+Label/fonts/font = ExtResource("1_lxe4t")
+RichTextLabel/colors/default_color = Color(0.99215686, 0.69803923, 0.3372549, 1)
+RichTextLabel/colors/font_outline_color = Color(0.46484935, 0.27957454, 0.09673611, 1)
+RichTextLabel/constants/outline_size = 9
+RichTextLabel/fonts/normal_font = SubResource("FontFile_tetyq")

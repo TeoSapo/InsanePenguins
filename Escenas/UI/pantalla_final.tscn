@@ -10,9 +10,11 @@
 [ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="5_us2dy"]
 [ext_resource type="FontFile" uid="uid://01pkremc2qev" path="res://Assets/Fuentes/Yellow Banana.otf" id="8_qoqeu"]
 [ext_resource type="PackedScene" uid="uid://c75g2enk86h68" path="res://Escenas/CLASES/copo_nieve.tscn" id="9_qoqeu"]
-[ext_resource type="Texture2D" uid="uid://bnpwtprcbi1ap" path="res://Assets/Sprites/Pinguino salto.png" id="11_qikyi"]
 [ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="12_rcewf"]
+[ext_resource type="Texture2D" uid="uid://ny03hyqrjhe4" path="res://Assets/Sprites/Pinguino Copa v3.png" id="13_7juya"]
 [ext_resource type="AudioStream" uid="uid://da3jk1x18dy0g" path="res://Assets/SFX/Ganador.ogg" id="13_hd4kl"]
+[ext_resource type="Texture2D" uid="uid://dbd2osfnumbvl" path="res://Assets/Sprites/pingui llorando v2.png" id="14_kqao0"]
+[ext_resource type="Texture2D" uid="uid://ddee1488mnqc3" path="res://Assets/Sprites/pinguino noqueado.png" id="15_kqao0"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hb4fy"]
 particle_flag_disable_z = true
@@ -42,6 +44,115 @@ scale_max = 0.39999998
 hue_variation_min = -0.33
 hue_variation_max = 0.39999998
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqao0"]
+atlas = ExtResource("13_7juya")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aly6x"]
+atlas = ExtResource("13_7juya")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8p8oq"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jfp0"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md7ke"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujukd"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roi0j"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urnee"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57etm"]
+atlas = ExtResource("14_kqao0")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6f30"]
+atlas = ExtResource("15_kqao0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3dqt"]
+atlas = ExtResource("15_kqao0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1t42"]
+atlas = ExtResource("15_kqao0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7grx"]
+atlas = ExtResource("15_kqao0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hudg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqao0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aly6x")
+}],
+"loop": 1,
+"name": &"Copa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8p8oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jfp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md7ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujukd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roi0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urnee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57etm")
+}],
+"loop": 1,
+"name": &"Llanto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6f30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3dqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1t42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7grx")
+}],
+"loop": 1,
+"name": &"Mareado",
+"speed": 5.0
+}]
+
 [node name="PantallaFinal" type="Control" unique_id=979812849]
 layout_mode = 3
 anchors_preset = 15
@@ -67,20 +178,19 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.21666667
-anchor_top = 0.062962964
+anchor_top = 0.06481481
 anchor_right = 0.78333336
-anchor_bottom = 0.20370376
-offset_top = 6.0
-offset_bottom = 5.9999695
+anchor_bottom = 0.20555556
 theme_override_colors/default_color = Color(0.10178528, 0.18779737, 0.34259823, 1)
 theme_override_fonts/normal_font = ExtResource("2_qkkwa")
 theme_override_font_sizes/normal_font_size = 73
 text = "FIN DEL JUEGO"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ConfettiGanador1" type="GPUParticles2D" parent="." unique_id=1622473951]
-position = Vector2(355, 257)
+position = Vector2(355, 252)
 emitting = false
 amount = 80
 texture = ExtResource("4_cmblm")
@@ -91,7 +201,7 @@ explosiveness = 0.2
 process_material = SubResource("ParticleProcessMaterial_hb4fy")
 
 [node name="ConfettiGanador2" type="GPUParticles2D" parent="." unique_id=384034856]
-position = Vector2(605, 257)
+position = Vector2(605, 252)
 emitting = false
 amount = 80
 texture = ExtResource("4_cmblm")
@@ -105,87 +215,79 @@ process_material = SubResource("ParticleProcessMaterial_cmblm")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24166666
-anchor_top = 0.44999996
+anchor_top = 0.4462963
 anchor_right = 0.49166667
-anchor_bottom = 0.68703705
-offset_top = 3.0000153
-offset_bottom = 3.0
+anchor_bottom = 0.68333334
 texture = ExtResource("3_4nlii")
+metadata/_edit_use_anchors_ = true
 
 [node name="HieloScoreP2" type="TextureRect" parent="." unique_id=214021985]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5083333
-anchor_top = 0.44999996
+anchor_top = 0.4462963
 anchor_right = 0.7583333
-anchor_bottom = 0.68703705
-offset_top = 3.0000153
-offset_bottom = 3.0
+anchor_bottom = 0.68333334
 texture = ExtResource("3_4nlii")
+metadata/_edit_use_anchors_ = true
 
 [node name="NieveP1" type="TextureRect" parent="." unique_id=36170115]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.24166666
-anchor_top = 0.4351852
+anchor_top = 0.43148148
 anchor_right = 0.49166667
-anchor_bottom = 0.5685185
-offset_top = 3.0
-offset_bottom = 3.0
+anchor_bottom = 0.5648148
 texture = ExtResource("4_frb8w")
+metadata/_edit_use_anchors_ = true
 
 [node name="NieveP2" type="TextureRect" parent="." unique_id=92128984]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5083333
-anchor_top = 0.4351852
+anchor_top = 0.43148148
 anchor_right = 0.7583333
-anchor_bottom = 0.5685185
-offset_top = 3.0
-offset_bottom = 3.0
+anchor_bottom = 0.5648148
 texture = ExtResource("4_frb8w")
+metadata/_edit_use_anchors_ = true
 
 [node name="p1Name" type="Label" parent="." unique_id=206912360]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.25416666
-anchor_top = 0.44999996
+anchor_top = 0.4462963
 anchor_right = 0.48229167
-anchor_bottom = 0.537037
-offset_top = 3.0000153
-offset_bottom = 3.0
+anchor_bottom = 0.53333336
 theme_override_colors/font_color = Color(0.29061437, 0.43304953, 0.6404014, 1)
 theme_override_fonts/font = ExtResource("2_qkkwa")
 theme_override_font_sizes/font_size = 37
 text = "PLAYER UNO"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="p2Name" type="Label" parent="." unique_id=1963519832]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.51666665
-anchor_top = 0.44999996
+anchor_top = 0.4462963
 anchor_right = 0.753125
-anchor_bottom = 0.537037
-offset_top = 3.0000153
-offset_bottom = 3.0
+anchor_bottom = 0.53333336
 theme_override_colors/font_color = Color(0.2901961, 0.43137255, 0.6392157, 1)
 theme_override_fonts/font = ExtResource("2_qkkwa")
 theme_override_font_sizes/font_size = 37
 text = "PLAYER DOS"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="p1Puntaje" type="RichTextLabel" parent="." unique_id=1261700542]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.27083334
-anchor_top = 0.57592595
+anchor_top = 0.57222223
 anchor_right = 0.4625
-anchor_bottom = 0.65
-offset_top = 3.0
-offset_bottom = 3.0
+anchor_bottom = 0.6462963
 theme = ExtResource("5_frb8w")
 theme_override_colors/default_color = Color(0.99044496, 0.6966843, 0.33824247, 1)
 theme_override_colors/font_outline_color = Color(0.23893332, 0.16936609, 0.06792779, 1)
@@ -195,16 +297,15 @@ bbcode_enabled = true
 text = "00000"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="p2Puntaje" type="RichTextLabel" parent="." unique_id=1201695528]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5385417
-anchor_top = 0.57592595
+anchor_top = 0.57222223
 anchor_right = 0.73020834
-anchor_bottom = 0.65
-offset_top = 3.0
-offset_bottom = 3.0
+anchor_bottom = 0.6462963
 theme = ExtResource("5_frb8w")
 theme_override_colors/default_color = Color(0.99044496, 0.6966843, 0.33824247, 1)
 theme_override_colors/font_outline_color = Color(0.23893332, 0.16936609, 0.06792779, 1)
@@ -214,13 +315,14 @@ bbcode_enabled = true
 text = "00000"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Ganador" type="Label" parent="." unique_id=1388215501]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 382.0
-offset_right = 672.0
-offset_bottom = 446.0
+anchor_left = 0.30833334
+anchor_top = 0.69814813
+anchor_right = 0.7
+anchor_bottom = 0.81666666
 theme_override_colors/font_color = Color(0.99215686, 0.7176471, 0.38431373, 1)
 theme_override_colors/font_outline_color = Color(0.23921569, 0.16862746, 0.06666667, 1)
 theme_override_constants/outline_size = 9
@@ -229,6 +331,7 @@ theme_override_font_sizes/font_size = 43
 text = "AAAAAAAAAAA"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=873482320]
 
@@ -238,24 +341,35 @@ autostart = true
 
 [node name="CopoNieve" parent="Node2D" unique_id=986956577 instance=ExtResource("9_qoqeu")]
 
-[node name="PinguinoSalto" type="Sprite2D" parent="." unique_id=2083687525]
-position = Vector2(350, 175.00002)
-scale = Vector2(3.7528358, 3.7528358)
-texture = ExtResource("11_qikyi")
-
 [node name="Volver" type="Button" parent="." unique_id=1587320816]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 443.0
-offset_right = 552.0
-offset_bottom = 516.05884
+anchor_left = 0.4
+anchor_top = 0.8111111
+anchor_right = 0.575
+anchor_bottom = 0.94640523
 theme = ExtResource("12_rcewf")
 theme_override_font_sizes/font_size = 26
 text = "VOLVER"
+metadata/_edit_use_anchors_ = true
 
 [node name="SonidoGanador" type="AudioStreamPlayer" parent="." unique_id=257768586]
 stream = ExtResource("13_hd4kl")
 bus = &"SFX"
+
+[node name="PinguiAnimP1" type="AnimatedSprite2D" parent="." unique_id=2007349661]
+position = Vector2(355, 171)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_7hudg")
+animation = &"Mareado"
+autoplay = "Llanto"
+frame_progress = 0.277889
+
+[node name="PinguiAnimP2" type="AnimatedSprite2D" parent="." unique_id=912988536]
+position = Vector2(605, 171)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_7hudg")
+animation = &"Mareado"
+autoplay = "Llanto"
 
 [connection signal="timeout" from="Node2D/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

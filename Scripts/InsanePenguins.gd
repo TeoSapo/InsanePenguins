@@ -14,6 +14,7 @@ const PESCADITO = preload("res://Escenas/CLASES/Pescadito.tscn")
 const TILE_SIZE:Vector2i = Vector2i(32,32)
 const TILE_SCALE:float = 2.5
 
+
 var nombres: Array[String] = ["AAA", "AAA"]
 var puntos: Array[int] = [0, 0]
 var records: Array = [[], []]
@@ -71,6 +72,7 @@ func on_Final_Nivel():
 
 	guardar_puntaje()
 	#get_tree().paused = true
+	
 	get_tree().change_scene_to_file("res://Escenas/UI/pantalla_final.tscn")
 
 func guardar_puntaje() -> void:
