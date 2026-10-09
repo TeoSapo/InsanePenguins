@@ -7,6 +7,7 @@ const JUMP_SPEED = 800.0
 const SLIP_SPEED = 500
 const SALTO = preload("res://Assets/SFX/PinguinoGraznando.ogg")
 const COMEPESCADO = preload("res://Assets/SFX/comepescado.ogg")
+const GOLPE = preload("res://Assets/SFX/Golpe.ogg")
 
 # Estados > "IDLE","CAMINANDO","SALTANDO","PANZASO","CONGELADO","NOQUEADO","DESCONGELANDO"
 @onready var estado 
@@ -44,7 +45,7 @@ var puntoDisparrow = 0
 
 func _ready() -> void:
 	estado = "IDLE"
-	InsanePenguins.Obtiene_Pescadito.connect(ruido_comiendo)	
+	InsanePenguins.Obtiene_Pescadito.connect(come_pescado)	
 	
 	$Nombre.text = InsanePenguins.nombres[indice_jugador]
 	_prefijo = "p1" if indice_jugador == 0 else "p2"
@@ -104,19 +105,15 @@ func mover(delta):
 			estado = "PANZASO"
 	
 	if  Input.is_action_just_pressed(_prefijo+"UP") and is_on_floor():
-		sonidoSFX.stream = SALTO
-		sonidoSFX.pitch_scale = randf_range(1,1.3)
-		sonidoSFX.volume_db = 0
-		sonidoSFX.play()
 		velocity.y = -JUMP_SPEED
 		estado = "SALTANDO"
-	
+		SFX(estado)
+		
 	#sprite.flip_h = direction < 0
 	if direction != 0:
 		dirMirada = 1 if direction > 0 else -1
 	sprite.flip_h = dirMirada < 0
 	puntoMarker2D.position.x = puntoDisparrow * dirMirada
-
 
 func animar():
 	match estado:
@@ -137,15 +134,30 @@ func animar():
 		"DESCONGELADO":
 			sprite.play("Descongelar")
 
-func ruido_comiendo(_nada):
-	sonidoSFX.stream = COMEPESCADO
-	sonidoSFX.pitch_scale = randf_range(1.3,1.7)
-	sonidoSFX.volume_db = -8.5
+func come_pescado(_nada):
+	SFX("COMIENDO")
+
+func SFX(sonido:String):
+	match sonido:
+		"COMIENDO":
+			sonidoSFX.stream = COMEPESCADO
+			sonidoSFX.pitch_scale = randf_range(1.3,1.7)
+			sonidoSFX.volume_db = -8.5
+		"NOQUEADO":
+			sonidoSFX.stream = GOLPE
+			sonidoSFX.pitch_scale = 1
+			sonidoSFX.volume_db = 0
+		"SALTANDO":
+			sonidoSFX.stream = SALTO
+			sonidoSFX.pitch_scale = randf_range(1,1.3)
+			sonidoSFX.volume_db = 0
+			sonidoSFX.play()	
 	sonidoSFX.play()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if indice_jugador != body.indice_jugador:
+	if indice_jugador != body.indice_jugador and body.estado !="NOQUEADO":
 		body.estado = "NOQUEADO"
+		SFX(body.estado)
 		await get_tree().create_timer(2.0).timeout
 		body.estado = "IDLE"
 	pass # Replace with function body.

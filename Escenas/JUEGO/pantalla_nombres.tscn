@@ -133,7 +133,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("5_2surd")
 theme_override_font_sizes/font_size = 22
 text = "↑/↓ = Cambiar Letra 
-Shift Derecho = Confirmar letra"
+L = Confirmar letra"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -156,5 +156,5 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("5_2surd")
 theme_override_font_sizes/font_size = 22
 text = "W/S = Cambiar Letra 
-Ctrl = Confirmar letra"
+F = Confirmar letra"
 vertical_alignment = 1
