@@ -7,6 +7,8 @@ extends Node2D
 @onready var player_2: CharacterBody2D = $HBoxContainer/VentanaP2/SubViewport/Player2
 @onready var dibujo_nivel: Node = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel
 
+@onready var tile_map: Node = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel/TileMapLayer
+
 
 func _ready():
 	InsanePenguins.reiniciar_puntos()
@@ -15,6 +17,10 @@ func _ready():
 	# duplica el mundo en el subviewport del player 2
 	player_1.position = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel/P1Start.position
 	player_2.position = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel/P2Start.position
+	
+	InsanePenguins.saber_ubicacion_tilemap(tile_map)
+	for i in range(0,22):
+		InsanePenguins.instanciar_pescado(dibujo_nivel)
 	
 	var Nivel = $HBoxContainer/VentanaP1/SubViewport.find_world_2d()
 	$HBoxContainer/VentanaP2/SubViewport.world_2d = Nivel

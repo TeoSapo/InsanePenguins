@@ -13,6 +13,7 @@ func _ready() -> void:
 	_ganador()
 
 func _ganador() -> void:
+	$SonidoGanador.play()
 	match InsanePenguins.obtener_ganador():
 		0:
 			confetti_ganador_1.emitting = true
@@ -24,17 +25,6 @@ func _ganador() -> void:
 			$Ganador.text = "ES UN EMPATE!"
 			confetti_ganador_1.emitting = true
 			confetti_ganador_2.emitting = true
-	
-	#if InsanePenguins.P1Score > InsanePenguins.P2Score:
-		#confetti_ganador_1.emitting = true
-		#$Ganador.text = "GANÓ " + InsanePenguins.P1Name + "!"
-	#elif InsanePenguins.P1Score < InsanePenguins.P2Score:
-		#confetti_ganador_2.emitting = true
-		#$Ganador.text = "GANÓ " + InsanePenguins.P2Name + "!"
-	#else:
-		#$Ganador.text = "ES UN EMPATE!"
-		#confetti_ganador_1.emitting = true
-		#confetti_ganador_2.emitting = true
 
 
 func _on_timer_timeout() -> void:

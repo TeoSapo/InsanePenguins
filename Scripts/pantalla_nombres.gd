@@ -51,4 +51,4 @@ func actualizar(j: int) -> void:
 func empezar_nivel() -> void:
 	for j in 2:
 		InsanePenguins.nombres[j] = obtener_nombres(j)
-	get_tree().change_scene_to_file("res://Escenas/JUEGO/Nivel1.tscn")
+	get_tree().change_scene_to_file("res://Escenas/JUEGO/Pantalla_jugable.tscn")

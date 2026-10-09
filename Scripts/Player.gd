@@ -5,15 +5,20 @@ signal nieve_Reload(actual: float, maxima: float)
 const SPEED = 200
 const JUMP_SPEED = 800.0
 const SLIP_SPEED = 500
+const SALTO = preload("res://Assets/SFX/PinguinoGraznando.ogg")
+const COMEPESCADO = preload("res://Assets/SFX/comepescado.ogg")
+
 # Estados > "IDLE","CAMINANDO","SALTANDO","PANZASO","CONGELADO","NOQUEADO","DESCONGELANDO"
 @onready var estado 
-@export var nombre:String 
-@export var colorvisible:Color
+@onready var nombre:String 
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var sonidoSFX: AudioStreamPlayer = $AudioStreamPlayer
 @onready var puntoMarker2D: Marker2D = $PuntoDeDisparo
 
 @export_range(0, 1) var indice_jugador = 0
+@export var color_nombre:Color
+
 
 @export_group("Bola de nieve")
 @export var escena_Bola: PackedScene
@@ -39,9 +44,10 @@ var puntoDisparrow = 0
 
 func _ready() -> void:
 	estado = "IDLE"
-	#$Label.text = nombre 
+	InsanePenguins.Obtiene_Pescadito.connect(ruido_comiendo)	
+	
 	$Nombre.text = InsanePenguins.nombres[indice_jugador]
-	_prefijo = "p1" if name == "Player1" else "p2"
+	_prefijo = "p1" if indice_jugador == 0 else "p2"
 	puntoDisparrow = absf(puntoMarker2D.position.x)
 	costoBola = nieveMax / maxi(bolasMax, 1)
 	nieveActual = clampf(nieveInicial, 0, nieveMax)
@@ -51,28 +57,24 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	cdRestante = maxf(cdRestante - delta, 0)
 	actualizarCongelado(delta)
-	
-	mover(delta,self)
+
+	mover(delta)
 	intentar_lanzar()
-	animar(self)
+	animar()
 	move_and_slide()
 
 
-func mover(delta,jugador: CharacterBody2D):
+#region Movimiento , animaciones Y Sonido
+
+func mover(delta):
 	var direction:float = 0.0
-	var playerTecla:String
-	
-	match jugador.name:
-		"Player1":
-			playerTecla = "p1"
-		"Player2": 
-			playerTecla = "p2"
-	
-	direction = Input.get_axis(playerTecla+"LEFT",playerTecla+"RIGHT")
+		
+	direction = Input.get_axis(_prefijo+"LEFT",_prefijo+"RIGHT")
 	
 	# Dos colisiones por cambio de sprite (panzaso)
 	$Collision.disabled = false
 	$Collision2.disabled = true
+	$Area2D.monitoring = false
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -85,22 +87,26 @@ func mover(delta,jugador: CharacterBody2D):
 	
 	if direction:
 		velocity.x = direction * SPEED
-		if is_on_floor():
+		if is_on_floor() and estado !="NOQUEADO": 
 			estado = "CAMINANDO"
 	
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_on_floor():
+		if is_on_floor() and estado != "NOQUEADO":
 			estado ="IDLE"
 	
-	if Input.is_action_pressed(playerTecla+"DOWN"):
+	if Input.is_action_pressed(_prefijo+"DOWN"):
 		$Collision.disabled = true
 		$Collision2.disabled = false
+		$Area2D.monitoring = true
 		if velocity.x != 0:
 			velocity.x = direction *  SLIP_SPEED
 			estado = "PANZASO"
 	
-	if  Input.is_action_just_pressed(playerTecla+"UP") and is_on_floor():
+	if  Input.is_action_just_pressed(_prefijo+"UP") and is_on_floor():
+		sonidoSFX.stream = SALTO
+		sonidoSFX.pitch_scale = randf_range(1,1.3)
+		sonidoSFX.volume_db = 0
 		sonidoSFX.play()
 		velocity.y = -JUMP_SPEED
 		estado = "SALTANDO"
@@ -112,7 +118,7 @@ func mover(delta,jugador: CharacterBody2D):
 	puntoMarker2D.position.x = puntoDisparrow * dirMirada
 
 
-func animar(jugador:CharacterBody2D):
+func animar():
 	match estado:
 		"IDLE":
 			sprite.play("Idle")
@@ -122,6 +128,8 @@ func animar(jugador:CharacterBody2D):
 			sprite.play("Caminando")	
 		"PANZASO":
 			sprite.play("Panzaso")
+		"NOQUEADO":
+			sprite.play("Noqueado")
 		"LANZANDO":
 			sprite.play("Lanzando")
 		"CONGELADO":
@@ -129,10 +137,21 @@ func animar(jugador:CharacterBody2D):
 		"DESCONGELADO":
 			sprite.play("Descongelar")
 
+func ruido_comiendo(_nada):
+	sonidoSFX.stream = COMEPESCADO
+	sonidoSFX.pitch_scale = randf_range(1.3,1.7)
+	sonidoSFX.volume_db = -8.5
+	sonidoSFX.play()
+
+
+#endregion
+
+# TEO: tema tiempo de congelado, por que no un timer? o queres que se descongele moviendose?
+
+#region Lanzamiento bola de nieve y congelacion
 
 func esta_bloqueado() -> bool:
-	return estado == "LANZANDO" or estado == "CONGELADO" or estado == "DESCONGELADO"
-
+	return estado == "LANZANDO" or estado == "CONGELADO" or estado == "DESCONGELADO" or estado == "NOQUEADO"
 
 func intentar_lanzar() -> void:
 	if not Input.is_action_just_pressed(_prefijo + "SHOOT"):
@@ -203,3 +222,13 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		return
 	if sprite.frame == frameLanz:
 		lanza_bola()
+
+#endregion
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if indice_jugador != body.indice_jugador:
+		body.estado = "NOQUEADO"
+		await get_tree().create_timer(2.0).timeout
+		body.estado = "IDLE"
+	pass # Replace with function body.

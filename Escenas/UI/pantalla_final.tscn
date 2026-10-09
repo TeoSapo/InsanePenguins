@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c75g2enk86h68" path="res://Escenas/CLASES/copo_nieve.tscn" id="9_qoqeu"]
 [ext_resource type="Texture2D" uid="uid://bnpwtprcbi1ap" path="res://Assets/Sprites/Pinguino salto.png" id="11_qikyi"]
 [ext_resource type="Theme" uid="uid://dj2h22lmccmfd" path="res://Escenas/UI/BotonHielo.tres" id="12_rcewf"]
+[ext_resource type="AudioStream" uid="uid://da3jk1x18dy0g" path="res://Assets/SFX/Ganador.ogg" id="13_hd4kl"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hb4fy"]
 particle_flag_disable_z = true
@@ -251,6 +252,10 @@ offset_bottom = 516.05884
 theme = ExtResource("12_rcewf")
 theme_override_font_sizes/font_size = 26
 text = "VOLVER"
+
+[node name="SonidoGanador" type="AudioStreamPlayer" parent="." unique_id=257768586]
+stream = ExtResource("13_hd4kl")
+bus = &"SFX"
 
 [connection signal="timeout" from="Node2D/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]
