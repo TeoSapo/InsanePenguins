@@ -78,7 +78,7 @@ anguloG = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305676988]
 sprite_frames = SubResource("SpriteFrames_7hudg")
-animation = &"BolaRompiendo"
+animation = &"Entera"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=582611692]
 position = Vector2(0, -1)

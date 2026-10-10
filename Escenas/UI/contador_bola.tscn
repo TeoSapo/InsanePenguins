@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://devc4rk08m0m8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ax61"]
+load_path = "res://.godot/imported/Bola Grabber.png-de7afe6a7a59948ef93c504357223a75.ctex"
+
+[node name="contador_bola" type="Node2D" unique_id=1169171935]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=585543260]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="cantidadBolaNieve" type="Label" parent="VBoxContainer" unique_id=1836183154]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "x10"
+
+[node name="imgBolaNieve" type="Sprite2D" parent="VBoxContainer" unique_id=1289322219]
+position = Vector2(9, 33)
+scale = Vector2(0.5, 0.5)
+texture = SubResource("CompressedTexture2D_4ax61")

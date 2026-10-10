@@ -58,6 +58,7 @@ size = Vector2(24, 26)
 
 [node name="MontonNieve" type="Node2D" unique_id=707573585]
 script = ExtResource("1_uhypd")
+tiempoRegen = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=901078014]
 sprite_frames = SubResource("SpriteFrames_hb4fy")
@@ -70,4 +71,11 @@ collision_layer = 16
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_hb4fy")
 
+[node name="TimerRecoleccion" type="Timer" parent="." unique_id=417681574]
+
+[node name="TimerRegeneracion" type="Timer" parent="." unique_id=527970712]
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="TimerRecoleccion" to="." method="_on_timer_recoleccion_timeout"]
+[connection signal="timeout" from="TimerRegeneracion" to="." method="_on_timer_regeneracion_timeout"]

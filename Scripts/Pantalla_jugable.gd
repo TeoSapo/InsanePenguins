@@ -7,6 +7,7 @@ extends Node2D
 @onready var player_2: CharacterBody2D = $HBoxContainer/VentanaP2/SubViewport/Player2
 @onready var dibujo_nivel: Node = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel
 
+
 @onready var tile_map: Node = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel/TileMapLayer
 
 

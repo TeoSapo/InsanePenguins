@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name Pinguino
-signal nieve_Reload(actual: float, maxima: float)
+#signal nieve_Reload(actual: float, maxima: float)
 
 const SPEED = 200
 const JUMP_SPEED = 800.0
@@ -46,13 +46,14 @@ var puntoDisparrow = 0
 func _ready() -> void:
 	estado = "IDLE"
 	InsanePenguins.Obtiene_Pescadito.connect(come_pescado)	
+	InsanePenguins.choqueMonton.connect(explosionDeNieve)
 	
 	$Nombre.text = InsanePenguins.nombres[indice_jugador]
 	_prefijo = "p1" if indice_jugador == 0 else "p2"
 	puntoDisparrow = absf(puntoMarker2D.position.x)
 	costoBola = nieveMax / maxi(bolasMax, 1)
 	nieveActual = clampf(nieveInicial, 0, nieveMax)
-	nieve_Reload.emit(nieveActual, nieveMax)
+	#nieve_Reload.emit(nieveActual, nieveMax)
 
 
 func _physics_process(delta: float) -> void:
@@ -164,7 +165,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 #endregion
 
-# TEO: tema tiempo de congelado, por que no un timer? o queres que se descongele moviendose?
+func explosionDeNieve(id) -> void:
+	if indice_jugador == id:
+		$ChoquePinguinos.emitting = true
 
 #region Lanzamiento bola de nieve y congelacion
 
@@ -181,7 +184,7 @@ func intentar_lanzar() -> void:
 	
 	nieveActual -= costoBola
 	cdRestante = cooldoownDisparo
-	nieve_Reload.emit(nieveActual, nieveMax)
+	#nieve_Reload.emit(nieveActual, nieveMax)
 	
 	velocity.x = 0
 	estado = "LANZANDO"
@@ -198,7 +201,6 @@ func lanza_bola() -> void:
 	if escena_Bola == null:
 		push_warning("Falta escena de la bola de nieve !")
 		return
-	print(self.name)
 	var bola = escena_Bola.instantiate()
 	get_parent().add_child(bola)
 	bola.global_position = puntoMarker2D.global_position
@@ -209,7 +211,6 @@ func recargarBolas(cantidad: float) -> void:
 	if nieveActual >= nieveMax:
 		return
 	nieveActual = minf(nieveActual + cantidad * costoBola, nieveMax)
-	nieve_Reload.emit(nieveActual, nieveMax)
 
 func recibir_impacto() -> void:
 	if estado == "CONGELADO" or estado == "DESCONGELADO":

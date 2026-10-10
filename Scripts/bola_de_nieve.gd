@@ -71,6 +71,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if sprite.sprite_frames.has_animation(animBolaRompiendo):
 		sprite.play(animBolaRompiendo)
 	else:
+		
 		queue_free()
 
 

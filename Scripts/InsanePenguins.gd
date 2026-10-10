@@ -1,22 +1,18 @@
 extends Node
 
-
-
 signal Obtiene_Pescadito
 signal Actualizar_Score
 signal No_hay_mas_tiempo
 signal puntos_cambiados(indicePJ: int, valor: int)
-signal recolectar_nieve
+#signal recolectar_nieve
+signal choqueMonton
 
 const TIC:float = 0.6
-const maxRegistros = 5
-const pathSave = "user://puntajes.json"
 const PESCADITO = preload("res://Escenas/CLASES/Pescadito.tscn")
 const MONTON_NIEVE = preload("res://Escenas/CLASES/Monton_Nieve.tscn")
 
 const TILE_SIZE:Vector2i = Vector2i(32,32)
 const TILE_SCALE:float = 2.5
-
 
 var nombres: Array[String] = ["P01", "P02"]
 var puntos: Array[int] = [0, 0]
@@ -26,7 +22,6 @@ var tiles_disponibles:Array[Vector2i]
 func _ready() -> void:
 	Obtiene_Pescadito.connect(on_Obtiene_Pescadito)
 	No_hay_mas_tiempo.connect(on_Final_Nivel)
-	cargar_record()
 
 func reiniciar_puntos() -> void:
 	puntos = [0, 0]
@@ -45,7 +40,6 @@ func obtener_ganador() -> int:
 	if puntos[1] > puntos[0]:
 		return 1
 	return -1
-
 
 func saber_ubicacion_tilemap(tiles):
 	var celdas_usadas: Array[Vector2i] = tiles.get_used_cells()
@@ -81,34 +75,5 @@ func instanciar_monton_de_nieve(nivel):
 	nivel.add_child(nuevo_monton)
 
 
-#region Final, puntajes - guardado y recuperación
-
 func on_Final_Nivel():
-
-	guardar_puntaje()
-	#get_tree().paused = true
-	
 	get_tree().change_scene_to_file("res://Escenas/UI/pantalla_final.tscn")
-
-func guardar_puntaje() -> void:
-	for j in 2:
-		records[j].append({"nombre": nombres[j], "puntos": puntos[j]})
-		records[j].sort_custom(func(a, b): return a["puntos"] > b["puntos"])
-		if records[j].size() > maxRegistros:
-			records[j].resize(maxRegistros)
-	guardar_en_disco()
-
-func guardar_en_disco() -> void:
-	var archivo = FileAccess.open(pathSave, FileAccess.WRITE)
-	archivo.store_string(JSON.stringify(records))
-
-func cargar_record() -> void:
-	if not FileAccess.file_exists(pathSave):
-		return
-	var datos = JSON.parse_string(FileAccess.get_file_as_string(pathSave))
-	if datos is Array and datos.size() == 2:
-		records = datos
-		for lista in records:
-			for r in lista:
-				r["puntos"] = int(r["puntos"])
-#endregion
