@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ckpgir6e2enia" path="res://Assets/Imagenes/tile 1 hielo pared-1.png.png" id="11_lxv36"]
 [ext_resource type="PackedScene" uid="uid://bsu2on7jwpvxa" path="res://Escenas/CLASES/Player.tscn" id="12_lxv36"]
 [ext_resource type="FontFile" uid="uid://byqjw14hgt6lu" path="res://Assets/Fuentes/Goldy Burst.ttf" id="13_foey1"]
+[ext_resource type="AudioStream" uid="uid://btepw1b7jo2rp" path="res://Assets/SFX/Hover Boton UI.ogg" id="13_ujx4q"]
 
 [sub_resource type="Gradient" id="Gradient_2grvd"]
 colors = PackedColorArray(0.8078169, 0.90145904, 0.93316627, 1, 1, 1, 1, 1)
@@ -251,7 +252,15 @@ scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAALAAUAAAACAAAAAAAKAAUAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAUAAAABAAAAAAAFAAUAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAABAAUAAAABAAAAAAAAAAUAAAAAAAAAAAAAAAQAAQAAAAAAAAALAAQAAQAAAAAAAAALAAMAAQAAAAAAAAALAAIAAQAAAAAAAAALAAEAAQAAAAAAAAALAAAAAQAAAAAAAAALAP//AQAAAAAAAAAAAAMAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_hnfju")
 
+[node name="SonidoUI" type="AudioStreamPlayer" parent="." unique_id=1429882537]
+stream = ExtResource("13_ujx4q")
+volume_db = -8.0
+
+[connection signal="mouse_entered" from="Jugar" to="." method="_on_ruidito_menu"]
 [connection signal="pressed" from="Jugar" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Sonidos" to="." method="_on_ruidito_menu"]
 [connection signal="pressed" from="Sonidos" to="." method="_on_sonidos_pressed"]
+[connection signal="mouse_entered" from="Salir" to="." method="_on_ruidito_menu"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
+[connection signal="mouse_entered" from="Creditos" to="." method="_on_ruidito_menu"]
 [connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]

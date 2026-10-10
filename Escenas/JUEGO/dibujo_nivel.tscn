@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dx1sve0sn6alr"]
 
-[ext_resource type="PackedScene" uid="uid://c66hto4d8j1qt" path="res://Escenas/CLASES/Pescadito.tscn" id="1_75r1h"]
 [ext_resource type="Texture2D" uid="uid://dklkkatkytjul" path="res://Assets/Imagenes/montañas fondo claras.png" id="1_x6ve0"]
 [ext_resource type="Texture2D" uid="uid://dhrsqru12nku6" path="res://Assets/Imagenes/Plataformas.png" id="2_qllr2"]
 [ext_resource type="Texture2D" uid="uid://cjilpdhwuu8jt" path="res://Assets/Imagenes/montañas nevadas v2.png" id="2_tqc8v"]
 [ext_resource type="Texture2D" uid="uid://ckpgir6e2enia" path="res://Assets/Imagenes/tile 1 hielo pared-1.png.png" id="3_wu0i2"]
 [ext_resource type="Texture2D" uid="uid://ou1y708welh1" path="res://Assets/Imagenes/copo Nieve-1.png.png" id="4_qllr2"]
+[ext_resource type="PackedScene" uid="uid://depndn0c15v0e" path="res://Escenas/CLASES/Monton_Nieve.tscn" id="6_x6ve0"]
 
 [sub_resource type="Gradient" id="Gradient_75r1h"]
 colors = PackedColorArray(0.10528911, 0.62445694, 0.908275, 1, 0.97449404, 0.91539735, 0.8203692, 1)
@@ -117,11 +117,6 @@ offset_bottom = 2922.0
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_tqc8v")
 
-[node name="Pescaditos" type="Node" parent="." unique_id=1904559500]
-
-[node name="Percadito1" parent="Pescaditos" unique_id=1845132850 instance=ExtResource("1_75r1h")]
-position = Vector2(990, 1312)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1234662462]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
@@ -165,3 +160,9 @@ speed_scale = 2.5
 use_fixed_seed = true
 seed = 3300505189
 process_material = SubResource("ParticleProcessMaterial_wu0i2")
+
+[node name="MontonNieve" parent="." unique_id=707573585 instance=ExtResource("6_x6ve0")]
+position = Vector2(413, 1984)
+
+[node name="MontonNieve2" parent="." unique_id=1291271969 instance=ExtResource("6_x6ve0")]
+position = Vector2(760, 1984)

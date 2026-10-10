@@ -1,5 +1,6 @@
 extends Control
 
+@onready var sonido_ui: AudioStreamPlayer = $SonidoUI
 
 
 func _on_button_pressed() -> void:
@@ -14,5 +15,10 @@ func _on_creditos_pressed() -> void:
 	$PantallaCreditos.visible = true
 
 
+
 func _on_salir_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_ruidito_menu():
+	sonido_ui.play()

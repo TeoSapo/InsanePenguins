@@ -6,11 +6,14 @@ signal Obtiene_Pescadito
 signal Actualizar_Score
 signal No_hay_mas_tiempo
 signal puntos_cambiados(indicePJ: int, valor: int)
+signal recolectar_nieve
 
 const TIC:float = 0.6
 const maxRegistros = 5
 const pathSave = "user://puntajes.json"
 const PESCADITO = preload("res://Escenas/CLASES/Pescadito.tscn")
+const MONTON_NIEVE = preload("res://Escenas/CLASES/Monton_Nieve.tscn")
+
 const TILE_SIZE:Vector2i = Vector2i(32,32)
 const TILE_SCALE:float = 2.5
 
@@ -29,7 +32,6 @@ func reiniciar_puntos() -> void:
 	puntos = [0, 0]
 
 func on_Obtiene_Pescadito(player:CharacterBody2D) -> void:
-
 	sumar_puntos(player.indice_jugador)
 
 func sumar_puntos(indice_jugador: int) -> void:
@@ -64,6 +66,19 @@ func instanciar_pescado(nivel):
 	nuevo_pescado.position.x = int(TILE_SIZE.x/2.0) + TILE_SIZE.x * TILE_SCALE * tiles_disponibles[indice_pescado].x
 	nuevo_pescado.position.y = int(-TILE_SIZE.y/2.0) + TILE_SIZE.y * TILE_SCALE * tiles_disponibles[indice_pescado].y
 	nivel.add_child(nuevo_pescado)
+
+func instanciar_monton_de_nieve(nivel):
+	var max_tiles:int = tiles_disponibles.size()-1
+	var indice_monton:int = 1
+	
+	indice_monton = randi_range(0,max_tiles)
+	
+	var nuevo_monton:Node2D = MONTON_NIEVE.instantiate()
+
+	nuevo_monton.indice_tile_asociado = indice_monton
+	nuevo_monton.position.x = int(TILE_SIZE.x/2.0) + TILE_SIZE.x * TILE_SCALE * tiles_disponibles[indice_monton].x
+	nuevo_monton.position.y = int(-TILE_SIZE.y/2.0) + TILE_SIZE.y * TILE_SCALE * tiles_disponibles[indice_monton].y
+	nivel.add_child(nuevo_monton)
 
 
 #region Final, puntajes - guardado y recuperación

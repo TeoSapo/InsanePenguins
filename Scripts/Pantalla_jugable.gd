@@ -19,8 +19,11 @@ func _ready():
 	player_2.position = $HBoxContainer/VentanaP1/SubViewport/DibujoNivel/P2Start.position
 	
 	InsanePenguins.saber_ubicacion_tilemap(tile_map)
-	for i in range(0,22):
+	for i in range(0,41):
 		InsanePenguins.instanciar_pescado(dibujo_nivel)
+	
+	for i in range(0,11):
+		InsanePenguins.instanciar_monton_de_nieve(dibujo_nivel)
 	
 	var Nivel = $HBoxContainer/VentanaP1/SubViewport.find_world_2d()
 	$HBoxContainer/VentanaP2/SubViewport.world_2d = Nivel
