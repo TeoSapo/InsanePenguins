@@ -6,6 +6,8 @@ signal No_hay_mas_tiempo
 signal puntos_cambiados(indicePJ: int, valor: int)
 #signal recolectar_nieve
 signal choqueMonton
+#signal golpe_nieve
+
 
 const TIC:float = 0.6
 const PESCADITO = preload("res://Escenas/CLASES/Pescadito.tscn")

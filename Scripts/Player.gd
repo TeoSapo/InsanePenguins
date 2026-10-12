@@ -8,6 +8,7 @@ const SLIP_SPEED = 500
 const SALTO = preload("res://Assets/SFX/PinguinoGraznando.ogg")
 const COMEPESCADO = preload("res://Assets/SFX/comepescado.ogg")
 const GOLPE = preload("res://Assets/SFX/Golpe.ogg")
+const GOLPENIEVE = preload("res://Assets/SFX/golpenieve.ogg")
 
 # Estados > "IDLE","CAMINANDO","SALTANDO","PANZASO","CONGELADO","NOQUEADO","DESCONGELANDO"
 @onready var estado 
@@ -153,6 +154,12 @@ func SFX(sonido:String):
 			sonidoSFX.pitch_scale = randf_range(1,1.3)
 			sonidoSFX.volume_db = 0
 			sonidoSFX.play()	
+		"GOLPENIEVE":
+			sonidoSFX.stream = GOLPENIEVE
+			sonidoSFX.pitch_scale = randf_range(1,1.3)
+			sonidoSFX.volume_db = 0
+			sonidoSFX.play()	
+			
 	sonidoSFX.play()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -216,6 +223,7 @@ func recibir_impacto() -> void:
 	if estado == "CONGELADO" or estado == "DESCONGELADO":
 		return
 	impactosRecibidos += 1
+	SFX("GOLPENIEVE")
 	if impactosRecibidos >= bolasParaCongelar:
 		congelar()
 
